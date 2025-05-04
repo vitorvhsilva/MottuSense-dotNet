@@ -23,7 +23,6 @@
     <Folder Include="Domain\Interfaces\" />
     <Folder Include="Infraestructure\Data\Migrations\" />
     <Folder Include="Infraestructure\Data\Repositories\" />
-    <Folder Include="Utils\" />
     <Folder Include="Presentation\Controllers\" />
     <Folder Include="Presentation\" />
   </ItemGroup>

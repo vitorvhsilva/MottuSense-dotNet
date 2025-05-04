@@ -1,6 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Motos.Infraestructure.Data.AppData;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<ApplicationContext>(x => {
+    x.UseOracle(builder.Configuration.GetConnectionString("Oracle"));
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
