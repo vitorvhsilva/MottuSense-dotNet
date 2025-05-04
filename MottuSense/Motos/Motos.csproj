@@ -20,11 +20,9 @@
   <ItemGroup>
     <Folder Include="Application\Interfaces\" />
     <Folder Include="Application\Services\" />
-    <Folder Include="Domain\Entitites\" />
     <Folder Include="Domain\Interfaces\" />
     <Folder Include="Infraestructure\Data\Migrations\" />
     <Folder Include="Infraestructure\Data\Repositories\" />
-    <Folder Include="Models\" />
     <Folder Include="Utils\" />
     <Folder Include="Presentation\Controllers\" />
     <Folder Include="Presentation\" />
