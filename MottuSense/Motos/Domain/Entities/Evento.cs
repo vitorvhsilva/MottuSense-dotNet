@@ -9,11 +9,16 @@ namespace Motos.Domain.Entitites
     public class Evento
     {
         [Key]
+        [Column(TypeName = "VARCHAR2(255)")]
         public string IdEvento { get; set; }
-        public string DescricaoEvento { get; set; }
-        public CorEvento CorEvento { get; set; }
 
-        //navegacao
+        [Column(TypeName = "VARCHAR2(500)")]
+        public string DescricaoEvento { get; set; }
+
+        [Column(TypeName = "VARCHAR2(50)")]
+        public CorEvento CorEvento { get; private set; }
+
+
         public ICollection<EventoMoto> EventosMoto { get; set; }
     }
 }

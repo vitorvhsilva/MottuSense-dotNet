@@ -9,11 +9,17 @@ namespace Motos.Domain.Entitites
     public class Moto
     {
         [Key]
+        [Column(TypeName = "VARCHAR2(255)")]
         public string IdMoto { get; set; }
+        [Column(TypeName = "VARCHAR2(50)")]
         public string PlacaMoto { get; set; }
-        public string ModeloMoto { get; set; }
+        [Column(TypeName = "VARCHAR2(100)")]
+        public ModeloMoto ModeloMoto { get; set; }
+        [Column(TypeName = "VARCHAR2(100)")]
         public StatusMoto StatusMoto { get; set; }
+        [Column(TypeName = "VARCHAR2(500)")]
         public string ChassiMoto { get; set; }
+        [Column(TypeName = "VARCHAR2(500)")]
         public string IotMoto { get; set; }
 
         [ForeignKey("Moto")]

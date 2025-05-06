@@ -8,10 +8,15 @@ namespace Motos.Domain.Entitites
     {
         [Key]
         [ForeignKey("Patio")]
+        [Column(TypeName = "VARCHAR2(255)")]
         public string IdPatio { get; set; }
+        [Column(TypeName = "NUMBER")]
         public int CoordenadaXEstrutura { get; set; }
+        [Column(TypeName = "NUMBER")]
         public int CoordenadaYEstrutura { get; set; }
+        [Column(TypeName = "NUMBER")]
         public double TamanhoEstrutura { get; set; }
+        [Column(TypeName = "NUMBER")]
         public double RotacaoEstrutura { get; set; }
 
         //navegacao

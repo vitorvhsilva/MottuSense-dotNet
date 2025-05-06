@@ -8,12 +8,17 @@ namespace Motos.Domain.Entities
     public class EventoMoto
     {
         [Key]
+        [Column(TypeName = "VARCHAR2(255)")]
         public string IdEventoMoto { get; set; }
         [ForeignKey("Moto")]
+        [Column(TypeName = "VARCHAR2(255)")]
         public string IdMoto { get; set; }
         [ForeignKey("Evento")]
+        [Column(TypeName = "VARCHAR2(255)")]
         public string IdEvento { get; set; }
+        [Column(TypeName = "NUMBER(1)")]
         public bool EventoVisualizado { get; set; }
+        [Column(TypeName = "TIMESTAMP")]
         public DateTime DataHoraEvento { get; set; }
 
         //navegacao

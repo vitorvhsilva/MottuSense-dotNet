@@ -8,8 +8,11 @@ namespace Motos.Domain.Entitites
     {
         [Key]
         [ForeignKey("Moto")]
+        [Column(TypeName = "VARCHAR2(255)")]
         public string IdMoto { get; set; }
+        [Column(TypeName = "VARCHAR2(500)")]
         public string LatitudeMoto { get; set; }
+        [Column(TypeName = "VARCHAR2(500)")]
         public string LongitudeMoto { get; set; }
 
         // navegacao
