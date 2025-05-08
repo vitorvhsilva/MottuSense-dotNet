@@ -1,0 +1,12 @@
+﻿using Motos.Domain.Entitites;
+
+namespace Motos.Application.Interfaces
+{
+    public interface IMotoService
+    {
+        IEnumerable<Moto> ObterTodasAsMotosDoPatio(string id);
+        Moto ObterMotoPorId(string id);
+        Moto AtualizarMoto();
+        Moto CadastrarMoto();
+    }
+}

@@ -26,7 +26,7 @@ namespace Motos.Domain.Entitites
         public string IdPatio { get; set; }
 
         //navegacao
-        public virtual Patio Patio { get; set; }
+        public Patio Patio { get; set; }
         public LocalizacaoMoto LocalizacaoMoto { get; set; }
         public ICollection<EventoMoto> EventosMoto { get; set; }
     }
