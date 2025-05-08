@@ -47,6 +47,19 @@ namespace Motos.Infraestructure.Data.Repositories
             return _context.Moto.FirstOrDefault(m => m.PlacaMoto == placa);
         }
 
+        public bool ExisteMotoPorId(string id)
+        {
+            try
+            {
+                return _context.Moto.Where(m => m.IdMoto == id).Any();
+            } catch(Exception e)
+            {
+                Console.WriteLine($"Erro na aplicação: {e.Message}");
+                return false;
+            }
+        }
+
+
         public IEnumerable<Moto> ObterTodasAsMotosDoPatio(string id)
         {
             return _context.Moto.Where(m => m.IdPatio == id).ToList();

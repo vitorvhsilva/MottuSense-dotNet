@@ -1,5 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using Motos.Application.Interfaces;
+using Motos.Application.Services;
+using Motos.Domain.Interfaces;
 using Motos.Infraestructure.Data.AppData;
+using Motos.Infraestructure.Data.Repositories;
+using Motos.Presentation.Mappers;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,10 +15,30 @@ builder.Services.AddDbContext<ApplicationContext>(x => {
     x.UseOracle(builder.Configuration.GetConnectionString("Oracle"));
 });
 
-builder.Services.AddControllers();
+builder.Services.AddAutoMapper(typeof(MotoControllerMapper));
+
+builder.Services.AddTransient<IMotoRepository, MotoRepository>();
+builder.Services.AddTransient<IMotoService, MotoService>();
+
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+        }); 
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(conf => {
+    conf.EnableAnnotations();
+    conf.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Minha API",
+        Version = "v1"
+    });
+});
+
 
 var app = builder.Build();
 

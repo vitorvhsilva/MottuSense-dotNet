@@ -1,6 +1,5 @@
 ﻿using Motos.Domain.Entities.Enums;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Motos.Presentation.Dto.Moto
 {

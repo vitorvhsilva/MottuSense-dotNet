@@ -22,10 +22,12 @@ namespace Motos.Domain.Entitites
         [Column(TypeName = "VARCHAR2(500)")]
         public string IotMoto { get; set; }
 
-        [ForeignKey("Moto")]
+        [Column(TypeName = "VARCHAR2(255)")]
         public string IdPatio { get; set; }
 
         //navegacao
+
+        [ForeignKey(nameof(IdPatio))]
         public Patio Patio { get; set; }
         public LocalizacaoMoto LocalizacaoMoto { get; set; }
         public ICollection<EventoMoto> EventosMoto { get; set; }

@@ -10,5 +10,6 @@ namespace Motos.Domain.Interfaces
         Moto ObterMotoPorPlaca(string placa);
         Moto AtualizarMoto(Moto moto);
         Moto CadastrarMoto(Moto moto);
+        bool ExisteMotoPorId(string id);
     }
 }

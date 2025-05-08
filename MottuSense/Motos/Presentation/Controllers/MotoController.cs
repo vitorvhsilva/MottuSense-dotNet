@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Motos.Application.Interfaces;
 using Motos.Domain.Entitites;
 using Motos.Presentation.Dto.Moto;
-using Motos.Presentation.Mapper;
+using Motos.Presentation.Mappers;
 
 namespace Motos.Presentation.Controllers
 {
@@ -11,10 +12,12 @@ namespace Motos.Presentation.Controllers
     public class MotoController : ControllerBase
     {
         private readonly IMotoService _service;
+        private readonly IMapper _mapper;
 
-        public MotoController(IMotoService service)
+        public MotoController(IMotoService service, IMapper mapper)
         {
             _service = service;
+            _mapper = mapper;
         }
 
 
@@ -41,8 +44,11 @@ namespace Motos.Presentation.Controllers
         [HttpPost]
         public IActionResult CadastrarMoto([FromBody] CadastrarMotoInputDTO dto)
         {
+            Moto moto = _service.CadastrarMoto(_mapper.Map<Moto>(dto));
 
-            return Created();
+            CadastrarMotoOutputDTO output = _mapper.Map<CadastrarMotoOutputDTO>(moto);
+
+            return CreatedAtAction(nameof(ObterMotoPorId), new { id = output.IdMoto }, output);
         }
 
         //AtualizarMotoOutputDTO 

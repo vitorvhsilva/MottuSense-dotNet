@@ -1,7 +1,6 @@
 ﻿using Motos.Application.Interfaces;
 using Motos.Domain.Entitites;
 using Motos.Domain.Interfaces;
-using Motos.Presentation.Dto.Moto;
 
 namespace Motos.Application.Services
 {
@@ -14,14 +13,22 @@ namespace Motos.Application.Services
             _repository = motoRepository;
         }
 
-        public Moto AtualizarMoto(AtualizarMotoInputDTO dto)
+        public Moto AtualizarMoto(Moto moto)
         {
             throw new NotImplementedException();
         }
 
-        public Moto CadastrarMoto(CadastrarMotoInputDTO dto)
+        public Moto CadastrarMoto(Moto moto)
         {
-            throw new NotImplementedException();
+            string IdMoto = null;
+            do
+            {
+                IdMoto = Guid.NewGuid().ToString();
+            } while (_repository.ExisteMotoPorId(IdMoto));
+
+            moto.IdMoto = IdMoto;
+            Moto entityMoto = _repository.CadastrarMoto(moto);
+            return entityMoto;
         }
 
         public Moto ObterMotoPorId(string id)
