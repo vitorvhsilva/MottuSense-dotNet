@@ -38,7 +38,7 @@ namespace Motos.Application.Services
 
         public IEnumerable<Moto> ObterTodasAsMotosDoPatio(string id)
         {
-            throw new NotImplementedException();
+            return _repository.ObterTodasAsMotosDoPatio(id);
         }
     }
 }
