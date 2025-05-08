@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Motos.Application.Interfaces;
 using Motos.Domain.Entitites;
 using Motos.Presentation.Dto.Moto;
+using Motos.Presentation.Dto.Output;
 using Motos.Presentation.Mappers;
 
 namespace Motos.Presentation.Controllers
@@ -35,8 +36,12 @@ namespace Motos.Presentation.Controllers
         public IActionResult ObterMotoPorId(string id)
         {
             Moto moto = _service.ObterMotoPorId(id);
-            
-            return Ok();
+            if (moto == null)
+                return BadRequest("Não foi possível encontrar uma moto com esse id");
+
+            ObterMotoOutputDTO obterMoto = _mapper.Map<Moto, ObterMotoOutputDTO>(moto);
+
+            return Ok(obterMoto);
         }
 
 
@@ -44,9 +49,9 @@ namespace Motos.Presentation.Controllers
         [HttpPost]
         public IActionResult CadastrarMoto([FromBody] CadastrarMotoInputDTO dto)
         {
-            Moto moto = _service.CadastrarMoto(_mapper.Map<Moto>(dto));
+            Moto moto = _service.CadastrarMoto(_mapper.Map<CadastrarMotoInputDTO, Moto>(dto));
 
-            CadastrarMotoOutputDTO output = _mapper.Map<CadastrarMotoOutputDTO>(moto);
+            CadastrarMotoOutputDTO output = _mapper.Map<Moto, CadastrarMotoOutputDTO>(moto);
 
             return CreatedAtAction(nameof(ObterMotoPorId), new { id = output.IdMoto }, output);
         }
