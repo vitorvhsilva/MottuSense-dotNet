@@ -14,8 +14,8 @@ namespace Motos.Domain.Entities
         [Column(TypeName = "VARCHAR2(255)")]
         public string IdMoto { get; set; }
         [ForeignKey("Evento")]
-        [Column(TypeName = "VARCHAR2(255)")]
-        public string IdEvento { get; set; }
+        [Column(TypeName = "NUMBER")]
+        public int IdEvento { get; set; }
         [Column(TypeName = "NUMBER(1)")]
         public bool EventoVisualizado { get; set; }
         [Column(TypeName = "TIMESTAMP")]

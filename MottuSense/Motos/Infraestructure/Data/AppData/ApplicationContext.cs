@@ -25,6 +25,15 @@ namespace Motos.Infraestructure.Data.AppData
                 new Patio { IdPatio = "idTeste", IdFilial = "idTeste", EstruturaPatioCriada = false},
                 new Patio { IdPatio = "idTeste2", IdFilial = "idTeste2", EstruturaPatioCriada = false}
             );
+
+            modelBuilder.Entity<Evento>().HasData(
+                new Evento { IdEvento = 1, DescricaoEvento = "A moto está preparada para ser alugada", CorEvento = CorEvento.VERDE},
+                new Evento { IdEvento = 2, DescricaoEvento = "A moto chegou no patio", CorEvento = CorEvento.CINZA},
+                new Evento { IdEvento = 3, DescricaoEvento = "A moto saiu do patio", CorEvento = CorEvento.CINZA},
+                new Evento { IdEvento = 4, DescricaoEvento = "A moto está em manutenção", CorEvento = CorEvento.CINZA},
+                new Evento { IdEvento = 5, DescricaoEvento = "A moto chegou sem placa", CorEvento = CorEvento.VERMELHO},
+                new Evento { IdEvento = 6, DescricaoEvento = "A moto chegou precisando de manutenção", CorEvento = CorEvento.VERMELHO}
+            );
         }
 
         public DbSet<Patio> Patio { get; set; }
