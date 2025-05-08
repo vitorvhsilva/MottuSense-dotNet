@@ -18,7 +18,12 @@ namespace Motos.Infraestructure.Data.AppData
                     v => v.ToString(),
                     v => (CorEvento)Enum.Parse(typeof(CorEvento), v))
                 .HasColumnType("VARCHAR2(50)");
-            
+
+            //evitando duplicidade no banco de dados
+            modelBuilder.Entity<Moto>()
+                .HasIndex(m => m.PlacaMoto)
+                .IsUnique();
+
 
             //inserindo dados base de patio
             modelBuilder.Entity<Patio>().HasData(
