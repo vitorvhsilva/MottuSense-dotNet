@@ -11,7 +11,11 @@ namespace Motos.Presentation.Controllers
     public class MotoController : ControllerBase
     {
         private readonly IMotoService _service;
-        private readonly MotoMapper _mapper;
+
+        public MotoController(IMotoService service)
+        {
+            _service = service;
+        }
 
 
         //IEnumerable<ObterMotosOutputDTO>
@@ -19,7 +23,6 @@ namespace Motos.Presentation.Controllers
         public IActionResult ObterTodasAsMotosDoPatio(string id)
         {
             IEnumerable<Moto> motos = _service.ObterTodasAsMotosDoPatio(id);
-            
 
             return Ok();
         }
@@ -44,7 +47,7 @@ namespace Motos.Presentation.Controllers
 
         //AtualizarMotoOutputDTO 
         [HttpPut("{id}")]
-        public IActionResult AtualizarMoto(int id, [FromBody] string value)
+        public IActionResult AtualizarMoto([FromBody] AtualizarMotoInputDTO dto)
         {
             return Ok();
         }

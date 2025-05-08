@@ -1,4 +1,5 @@
 ﻿using Motos.Domain.Entitites;
+using Motos.Presentation.Dto.Moto;
 
 namespace Motos.Domain.Interfaces
 {
@@ -6,7 +7,8 @@ namespace Motos.Domain.Interfaces
     {
         IEnumerable<Moto> ObterTodasAsMotosDoPatio(string id);
         Moto ObterMotoPorId(string id);
-        Moto AtualizarMoto();
-        Moto CadastrarMoto();
+        Moto ObterMotoPorPlaca(string placa);
+        Moto AtualizarMoto(Moto moto);
+        Moto CadastrarMoto(Moto moto);
     }
 }
