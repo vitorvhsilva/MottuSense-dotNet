@@ -11,12 +11,20 @@ namespace Motos.Infraestructure.Data.AppData
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //indicando enum do evento 
             modelBuilder.Entity<Evento>()
                 .Property(e => e.CorEvento)
                 .HasConversion(
                     v => v.ToString(),
                     v => (CorEvento)Enum.Parse(typeof(CorEvento), v))
                 .HasColumnType("VARCHAR2(50)");
+            
+
+            //inserindo dados base de patio
+            modelBuilder.Entity<Patio>().HasData(
+                new Patio { IdPatio = "idTeste", IdFilial = "idTeste", EstruturaPatioCriada = false},
+                new Patio { IdPatio = "idTeste2", IdFilial = "idTeste2", EstruturaPatioCriada = false}
+            );
         }
 
         public DbSet<Patio> Patio { get; set; }
