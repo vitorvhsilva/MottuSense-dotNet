@@ -68,15 +68,14 @@ namespace Motos.Migrations
                     StatusMoto = table.Column<string>(type: "VARCHAR2(100)", nullable: false),
                     ChassiMoto = table.Column<string>(type: "VARCHAR2(500)", nullable: false),
                     IotMoto = table.Column<string>(type: "VARCHAR2(500)", nullable: false),
-                    IdPatio = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    PatioIdPatio = table.Column<string>(type: "VARCHAR2(255)", nullable: false)
+                    IdPatio = table.Column<string>(type: "VARCHAR2(255)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TB_MOTO", x => x.IdMoto);
                     table.ForeignKey(
-                        name: "FK_TB_MOTO_TB_PATIO_PatioIdPatio",
-                        column: x => x.PatioIdPatio,
+                        name: "FK_TB_MOTO_TB_PATIO_IdPatio",
+                        column: x => x.IdPatio,
                         principalTable: "TB_PATIO",
                         principalColumn: "IdPatio",
                         onDelete: ReferentialAction.Cascade);
@@ -139,9 +138,9 @@ namespace Motos.Migrations
                 column: "IdMoto");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TB_MOTO_PatioIdPatio",
+                name: "IX_TB_MOTO_IdPatio",
                 table: "TB_MOTO",
-                column: "PatioIdPatio");
+                column: "IdPatio");
         }
 
         /// <inheritdoc />

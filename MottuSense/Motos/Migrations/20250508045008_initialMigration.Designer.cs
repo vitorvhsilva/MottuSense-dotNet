@@ -12,7 +12,7 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace Motos.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20250508040422_initialMigration")]
+    [Migration("20250508045008_initialMigration")]
     partial class initialMigration
     {
         /// <inheritdoc />
@@ -122,7 +122,7 @@ namespace Motos.Migrations
 
                     b.Property<string>("IdPatio")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("VARCHAR2(255)");
 
                     b.Property<string>("IotMoto")
                         .IsRequired()
@@ -131,10 +131,6 @@ namespace Motos.Migrations
                     b.Property<string>("ModeloMoto")
                         .IsRequired()
                         .HasColumnType("VARCHAR2(100)");
-
-                    b.Property<string>("PatioIdPatio")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR2(255)");
 
                     b.Property<string>("PlacaMoto")
                         .IsRequired()
@@ -146,7 +142,7 @@ namespace Motos.Migrations
 
                     b.HasKey("IdMoto");
 
-                    b.HasIndex("PatioIdPatio");
+                    b.HasIndex("IdPatio");
 
                     b.ToTable("TB_MOTO");
                 });
@@ -213,7 +209,7 @@ namespace Motos.Migrations
                 {
                     b.HasOne("Motos.Domain.Entitites.Patio", "Patio")
                         .WithMany("Motos")
-                        .HasForeignKey("PatioIdPatio")
+                        .HasForeignKey("IdPatio")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -229,8 +225,7 @@ namespace Motos.Migrations
                 {
                     b.Navigation("EventosMoto");
 
-                    b.Navigation("LocalizacaoMoto")
-                        .IsRequired();
+                    b.Navigation("LocalizacaoMoto");
                 });
 
             modelBuilder.Entity("Motos.Domain.Entitites.Patio", b =>
