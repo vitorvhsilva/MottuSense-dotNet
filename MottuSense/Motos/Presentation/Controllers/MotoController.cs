@@ -5,6 +5,8 @@ using Motos.Domain.Entities;
 using Motos.Presentation.Dto.Localizacao;
 using Motos.Presentation.Dto.Moto;
 using Motos.Presentation.Dto.Output;
+using Swashbuckle.AspNetCore.Annotations;
+using System.Net;
 
 namespace Motos.Presentation.Controllers
 {
@@ -24,6 +26,13 @@ namespace Motos.Presentation.Controllers
         }
 
 
+        [SwaggerOperation(
+            Summary = "Obtém todas as motos de um pátio específico",
+            Description = "Retorna uma lista de motos associadas ao ID do pátio fornecido"
+        )]
+        [SwaggerResponse(200, "Lista de motos retornada com sucesso", typeof(IEnumerable<ObterMotosOutputDTO>))]
+        [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro ao processar a requisição")]
+
         //IEnumerable<ObterMotosOutputDTO>
         [HttpGet("patios/{id}")]
         public IActionResult ObterTodasAsMotosDoPatio(string id)
@@ -34,6 +43,13 @@ namespace Motos.Presentation.Controllers
 
             return Ok(output);
         }
+
+        [SwaggerOperation(
+            Summary = "Obtém uma moto",
+            Description = "Retorna uma motos pelo id fornecido"
+        )]
+        [SwaggerResponse(200, "Motos retornada com sucesso", typeof(ObterMotoOutputDTO))]
+        [SwaggerResponse((int)HttpStatusCode.BadRequest, "Não foi possível encontrar uma moto ou a localização com esse id")]
 
         //ObterMotoOutputDTO 
         [HttpGet("{id}")]
@@ -62,9 +78,15 @@ namespace Motos.Presentation.Controllers
             return Ok(obterMoto);
         }
 
+        [SwaggerOperation(
+            Summary = "Cadastra uma moto",
+            Description = "Cadastra uma moto e sua localização no sistema"
+        )]
+        [SwaggerResponse(201, "Moto cadastrada com sucesso", typeof(CadastrarMotoOutputDTO))]
+        [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro ao processar a requisição")]
 
         //CadastrarMotoOutputDTO 
-        [HttpPost]
+        [HttpPost()]
         public IActionResult CadastrarMoto([FromBody] CadastrarMotoInputDTO dto)
         {
             var moto = _motoService.CadastrarMoto(_mapper.Map<CadastrarMotoInputDTO, Moto>(dto));
@@ -75,6 +97,13 @@ namespace Motos.Presentation.Controllers
 
             return CreatedAtAction(nameof(ObterMotoPorId), new { id = output.IdMoto }, output);
         }
+
+        [SwaggerOperation(
+            Summary = "Atualiza uma moto",
+            Description = "Atualiza as informações de uma moto"
+        )]
+        [SwaggerResponse(200, "Moto atualizada com sucesso", typeof(AtualizarMotoOutputDTO))]
+        [SwaggerResponse((int)HttpStatusCode.BadRequest, "Moto não encontrada pelo id")]
 
         //AtualizarMotoOutputDTO 
         [HttpPut()]
@@ -88,6 +117,14 @@ namespace Motos.Presentation.Controllers
 
             return Ok(_mapper.Map<Moto, AtualizarMotoOutputDTO>(motoAtualizada));
         }
+
+
+        [SwaggerOperation(
+            Summary = "Deleta uma moto",
+            Description = "Deleta a moto da aplicação"
+        )]
+        [SwaggerResponse(204, "Moto apagada com sucesso")]
+        [SwaggerResponse((int)HttpStatusCode.BadRequest, "Moto não encontrada pelo id")]
 
         [HttpDelete("{id}")]
         public IActionResult DeletarMotoPorId(string id)
