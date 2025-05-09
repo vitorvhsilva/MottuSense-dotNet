@@ -1,4 +1,4 @@
-﻿using Motos.Domain.Entitites;
+﻿using Motos.Domain.Entities;
 using Motos.Domain.Interfaces;
 using Motos.Infraestructure.Data.AppData;
 

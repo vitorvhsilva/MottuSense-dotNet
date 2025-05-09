@@ -1,5 +1,5 @@
 ﻿using Motos.Application.Interfaces;
-using Motos.Domain.Entitites;
+using Motos.Domain.Entities;
 using Motos.Domain.Interfaces;
 
 namespace Motos.Application.Services

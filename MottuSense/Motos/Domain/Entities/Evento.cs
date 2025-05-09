@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Motos.Domain.Entitites
+namespace Motos.Domain.Entities
 {
     [Table("TB_EVENTO")]
     public class Evento

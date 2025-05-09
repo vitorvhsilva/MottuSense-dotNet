@@ -1,4 +1,4 @@
-﻿using Motos.Domain.Entitites;
+﻿using Motos.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 

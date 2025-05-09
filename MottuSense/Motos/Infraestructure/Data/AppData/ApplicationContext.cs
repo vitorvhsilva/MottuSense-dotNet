@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Motos.Domain.Entities;
 using Motos.Domain.Entities.Enums;
-using Motos.Domain.Entitites;
 
 namespace Motos.Infraestructure.Data.AppData
 {

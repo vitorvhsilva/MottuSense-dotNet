@@ -1,4 +1,4 @@
-﻿using Motos.Domain.Entitites;
+﻿using Motos.Domain.Entities;
 using Motos.Presentation.Dto.Moto;
 
 namespace Motos.Domain.Interfaces

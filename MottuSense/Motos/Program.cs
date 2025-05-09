@@ -15,13 +15,16 @@ builder.Services.AddDbContext<ApplicationContext>(x => {
     x.UseOracle(builder.Configuration.GetConnectionString("Oracle"));
 });
 
-builder.Services.AddAutoMapper(typeof(MotoControllerMapper));
+builder.Services.AddAutoMapper(typeof(ControllerMapper));
 
 builder.Services.AddTransient<IMotoRepository, MotoRepository>();
 builder.Services.AddTransient<IMotoService, MotoService>();
 
 builder.Services.AddTransient<ILocalizacaoRepository, LocalizacaoRepository>();
 builder.Services.AddTransient<ILocalizacaoService, LocalizacaoService>();
+
+builder.Services.AddTransient<IEventoMotoRepository, EventoMotoRepository>();
+builder.Services.AddTransient<IEventoMotoService, EventoMotoService>();
 
 
 builder.Services.AddControllers()

@@ -1,14 +1,18 @@
 ﻿using AutoMapper;
-using Motos.Domain.Entitites;
+using Motos.Domain.Entities;
+using Motos.Presentation.Dto.EventoMoto;
 using Motos.Presentation.Dto.Moto;
 using Motos.Presentation.Dto.Output;
 
 namespace Motos.Presentation.Mappers
 {
-    public class MotoControllerMapper: Profile
+    public class ControllerMapper: Profile
     {
-        public MotoControllerMapper()
+        public ControllerMapper()
         {
+            CreateMap<CadastrarEventoMotoInputDTO, EventoMoto>();
+            CreateMap<EventoMoto, CadastrarEventoMotoOutputDTO>();
+
             CreateMap<CadastrarMotoInputDTO, Moto>();
             CreateMap<Moto, CadastrarMotoOutputDTO>();
 

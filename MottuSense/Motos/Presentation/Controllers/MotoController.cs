@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Motos.Application.Interfaces;
-using Motos.Application.Services;
-using Motos.Domain.Entitites;
+using Motos.Domain.Entities;
 using Motos.Presentation.Dto.Localizacao;
 using Motos.Presentation.Dto.Moto;
 using Motos.Presentation.Dto.Output;
