@@ -13,7 +13,7 @@ namespace Motos.Application.Services
             _repository = repository;
         }
 
-        public void CadastrarLocalizacaoDaMoto(string IdMoto)
+        public LocalizacaoMoto CadastrarLocalizacaoDaMoto(string IdMoto)
         {
             var localizacao = new LocalizacaoMoto
             {
@@ -23,11 +23,12 @@ namespace Motos.Application.Services
             };
 
             _repository.CadastrarLocalizacaoDaMoto(localizacao);
+            return localizacao;
         }
 
         public LocalizacaoMoto ObterLocalizacaoPeloId(string IdMoto)
         {
-            throw new NotImplementedException();
+            return _repository.ObterLocalizacaoPeloId(IdMoto);
         }
     }
 }

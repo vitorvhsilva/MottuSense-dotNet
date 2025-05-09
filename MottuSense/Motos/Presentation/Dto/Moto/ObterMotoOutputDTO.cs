@@ -1,4 +1,5 @@
 ﻿using Motos.Domain.Entities.Enums;
+using Motos.Presentation.Dto.Localizacao;
 
 namespace Motos.Presentation.Dto.Output
 {
@@ -9,6 +10,7 @@ namespace Motos.Presentation.Dto.Output
        StatusMoto StatusMoto,
        string ChassiMoto,
        string IotMoto,
-       string IdPatio
+       string IdPatio,
+       LocalizacaoDTO Localizacao
     );
 }

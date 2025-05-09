@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Motos.Application.Interfaces;
 using Motos.Application.Services;
 using Motos.Domain.Entitites;
+using Motos.Presentation.Dto.Localizacao;
 using Motos.Presentation.Dto.Moto;
 using Motos.Presentation.Dto.Output;
 
@@ -40,10 +41,24 @@ namespace Motos.Presentation.Controllers
         public IActionResult ObterMotoPorId(string id)
         {
             var moto = _motoService.ObterMotoPorId(id);
-            if (moto is null)
-                return BadRequest("Não foi possível encontrar uma moto com esse id");
+            var localizacao = _localizacaoService.ObterLocalizacaoPeloId(id);
 
-            var obterMoto = _mapper.Map<Moto, ObterMotoOutputDTO>(moto);
+            if (moto is null || localizacao is null)
+                return BadRequest("Não foi possível encontrar uma moto ou a localização com esse id");
+
+            var localizacaoDTO = new LocalizacaoDTO(localizacao.IdMoto, localizacao.LatitudeMoto, localizacao.LongitudeMoto);
+
+            var obterMoto = new ObterMotoOutputDTO
+            (
+                moto.IdMoto,
+                moto.PlacaMoto,
+                moto.ModeloMoto,
+                moto.StatusMoto,
+                moto.ChassiMoto,
+                moto.IotMoto,
+                moto.IdPatio,
+                localizacaoDTO
+            );
 
             return Ok(obterMoto);
         }
@@ -55,7 +70,7 @@ namespace Motos.Presentation.Controllers
         {
             var moto = _motoService.CadastrarMoto(_mapper.Map<CadastrarMotoInputDTO, Moto>(dto));
 
-            _localizacaoService.CadastrarLocalizacaoDaMoto(moto.IdMoto);
+            var localizacao = _localizacaoService.CadastrarLocalizacaoDaMoto(moto.IdMoto);
 
             var output = _mapper.Map<Moto, CadastrarMotoOutputDTO>(moto);
 

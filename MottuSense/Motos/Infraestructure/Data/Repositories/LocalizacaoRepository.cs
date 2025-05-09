@@ -13,10 +13,12 @@ namespace Motos.Infraestructure.Data.Repositories
             _context = context;
         }
 
-        public void CadastrarLocalizacaoDaMoto(LocalizacaoMoto localizacao)
+        public LocalizacaoMoto CadastrarLocalizacaoDaMoto(LocalizacaoMoto localizacao)
         {
             _context.LocalizacaoMoto.Add(localizacao);
             _context.SaveChanges();
+
+            return localizacao;
         }
 
         public LocalizacaoMoto ObterLocalizacaoPeloId(string IdMoto)
