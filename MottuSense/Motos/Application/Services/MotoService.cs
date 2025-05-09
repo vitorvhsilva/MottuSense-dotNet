@@ -31,6 +31,11 @@ namespace Motos.Application.Services
             return entityMoto;
         }
 
+        public Moto DeletarMotoPorId(string IdMoto)
+        {
+            return _repository.DeletarMotoPorId(IdMoto);
+        }
+
         public Moto ObterMotoPorId(string id)
         {
             return _repository.ObterMotoPorId(id);

@@ -38,7 +38,7 @@ namespace Motos.Presentation.Controllers
         public IActionResult ObterMotoPorId(string id)
         {
             var moto = _service.ObterMotoPorId(id);
-            if (moto == null)
+            if (moto is null)
                 return BadRequest("Não foi possível encontrar uma moto com esse id");
 
             var obterMoto = _mapper.Map<Moto, ObterMotoOutputDTO>(moto);
@@ -63,6 +63,16 @@ namespace Motos.Presentation.Controllers
         public IActionResult AtualizarMoto([FromBody] AtualizarMotoInputDTO dto)
         {
             return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeletarMotoPorId(string id)
+        {
+            Moto moto = _service.DeletarMotoPorId(id);
+            if (moto is null)
+                return BadRequest("Moto não encontrada!");
+
+            return NoContent();
         }
     }
 }

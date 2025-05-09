@@ -11,5 +11,6 @@ namespace Motos.Domain.Interfaces
         Moto AtualizarMoto(Moto moto);
         Moto CadastrarMoto(Moto moto);
         bool ExisteMotoPorId(string id);
+        Moto DeletarMotoPorId(string IdMoto);
     }
 }

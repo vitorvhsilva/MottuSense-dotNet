@@ -8,5 +8,6 @@ namespace Motos.Application.Interfaces
         Moto ObterMotoPorId(string id);
         Moto AtualizarMoto(Moto dto);
         Moto CadastrarMoto(Moto dto);
+        Moto DeletarMotoPorId(string IdMoto);
     }
 }

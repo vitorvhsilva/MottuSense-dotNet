@@ -64,5 +64,20 @@ namespace Motos.Infraestructure.Data.Repositories
         {
             return _context.Moto.Where(m => m.IdPatio == id).ToList();
         }
+
+        public Moto DeletarMotoPorId(string IdMoto)
+        {
+            var moto = _context.Moto.FirstOrDefault(m => m.IdMoto == IdMoto);
+
+            if (moto is null)
+            {
+                return null;
+            }
+
+            _context.Moto.Remove(moto);
+            _context.SaveChanges();
+
+            return moto;
+        }
     }
 }
