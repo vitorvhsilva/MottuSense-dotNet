@@ -32,11 +32,6 @@ builder.Services.AddControllers()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(conf => {
     conf.EnableAnnotations();
-    conf.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "Minha API",
-        Version = "v1"
-    });
 });
 
 
