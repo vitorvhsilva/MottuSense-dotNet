@@ -20,12 +20,12 @@ namespace Motos.Infraestructure.Data.Repositories
 
         public IEnumerable<EventoMoto> PegarEventosPorIdMoto(string IdMoto)
         {
-            throw new NotImplementedException();
+            return _context.EventoMoto.Where(e => e.IdMoto == IdMoto);
         }
 
-        public IEnumerable<EventoMoto> PegarEventosPorIdPatio(string IdMoto)
+        public IEnumerable<EventoMoto> PegarEventosPorIdPatio(string IdPatio)
         {
-            throw new NotImplementedException();
+            return _context.EventoMoto.Where(e => e.Moto.IdPatio == IdPatio);
         }
 
         public EventoMoto PublicarEvento(EventoMoto evento)
