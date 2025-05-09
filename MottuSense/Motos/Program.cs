@@ -20,6 +20,9 @@ builder.Services.AddAutoMapper(typeof(MotoControllerMapper));
 builder.Services.AddTransient<IMotoRepository, MotoRepository>();
 builder.Services.AddTransient<IMotoService, MotoService>();
 
+builder.Services.AddTransient<ILocalizacaoRepository, LocalizacaoRepository>();
+builder.Services.AddTransient<ILocalizacaoService, LocalizacaoService>();
+
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>

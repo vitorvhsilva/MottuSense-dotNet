@@ -1,23 +1,25 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Motos.Application.Interfaces;
+using Motos.Application.Services;
 using Motos.Domain.Entitites;
 using Motos.Presentation.Dto.Moto;
 using Motos.Presentation.Dto.Output;
-using System.Collections.ObjectModel;
 
 namespace Motos.Presentation.Controllers
 {
-    [Route("api/v1/[controller]")]
+    [Route("api/v1/motos")]
     [ApiController]
     public class MotoController : ControllerBase
     {
-        private readonly IMotoService _service;
+        private readonly IMotoService _motoService;
+        private readonly ILocalizacaoService _localizacaoService;
         private readonly IMapper _mapper;
 
-        public MotoController(IMotoService service, IMapper mapper)
+        public MotoController(IMotoService motoService, ILocalizacaoService localizacaoService, IMapper mapper)
         {
-            _service = service;
+            _motoService = motoService;
+            _localizacaoService = localizacaoService;
             _mapper = mapper;
         }
 
@@ -26,7 +28,7 @@ namespace Motos.Presentation.Controllers
         [HttpGet("patios/{id}")]
         public IActionResult ObterTodasAsMotosDoPatio(string id)
         {
-            var motos = _service.ObterTodasAsMotosDoPatio(id);
+            var motos = _motoService.ObterTodasAsMotosDoPatio(id);
 
             var output = _mapper.Map<IEnumerable<Moto>, IEnumerable<ObterMotosOutputDTO>>(motos);
 
@@ -37,7 +39,7 @@ namespace Motos.Presentation.Controllers
         [HttpGet("{id}")]
         public IActionResult ObterMotoPorId(string id)
         {
-            var moto = _service.ObterMotoPorId(id);
+            var moto = _motoService.ObterMotoPorId(id);
             if (moto is null)
                 return BadRequest("Não foi possível encontrar uma moto com esse id");
 
@@ -51,7 +53,9 @@ namespace Motos.Presentation.Controllers
         [HttpPost]
         public IActionResult CadastrarMoto([FromBody] CadastrarMotoInputDTO dto)
         {
-            var moto = _service.CadastrarMoto(_mapper.Map<CadastrarMotoInputDTO, Moto>(dto));
+            var moto = _motoService.CadastrarMoto(_mapper.Map<CadastrarMotoInputDTO, Moto>(dto));
+
+            _localizacaoService.CadastrarLocalizacaoDaMoto(moto.IdMoto);
 
             var output = _mapper.Map<Moto, CadastrarMotoOutputDTO>(moto);
 
@@ -68,7 +72,7 @@ namespace Motos.Presentation.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeletarMotoPorId(string id)
         {
-            Moto moto = _service.DeletarMotoPorId(id);
+            Moto moto = _motoService.DeletarMotoPorId(id);
             if (moto is null)
                 return BadRequest("Moto não encontrada!");
 

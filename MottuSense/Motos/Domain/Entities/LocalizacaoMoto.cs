@@ -11,11 +11,11 @@ namespace Motos.Domain.Entitites
         [Column(TypeName = "VARCHAR2(255)")]
         public string IdMoto { get; set; }
         [Column(TypeName = "VARCHAR2(500)")]
-        public string LatitudeMoto { get; set; }
+        public string? LatitudeMoto { get; set; }
         [Column(TypeName = "VARCHAR2(500)")]
-        public string LongitudeMoto { get; set; }
+        public string? LongitudeMoto { get; set; }
 
         // navegacao
-        public Moto Moto { get; set; } 
+        public Moto? Moto { get; set; } 
     }
 }
