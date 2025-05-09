@@ -84,6 +84,8 @@ namespace Motos.Presentation.Controllers
             var moto = _mapper.Map<AtualizarMotoInputDTO, Moto>(dto);
             var motoAtualizada = _motoService.AtualizarMoto(moto);
 
+            if (motoAtualizada is null)
+                return BadRequest("Moto não encontrada!");
 
             return Ok(_mapper.Map<Moto, AtualizarMotoOutputDTO>(motoAtualizada));
         }

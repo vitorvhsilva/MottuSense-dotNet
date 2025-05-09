@@ -17,10 +17,8 @@ namespace Motos.Infraestructure.Data.Repositories
         {
             Moto entityMoto = _context.Moto.FirstOrDefault(m => m.IdMoto == moto.IdMoto);
 
-            if (entityMoto == null)
-            {
-                throw new KeyNotFoundException("Moto não encontrada pelo Id");
-            }
+            if (entityMoto is null)
+                return null;
 
             entityMoto.PlacaMoto = moto.PlacaMoto;
             entityMoto.IotMoto = moto.IotMoto;  
