@@ -43,9 +43,12 @@ namespace Motos.Presentation.Controllers
         }
 
 
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        //void
+        [HttpPatch("visualizar")]
+        public IActionResult VisualizarEventos([FromBody] VisualizarEventosDTO IdEventos)
         {
+            _service.MarcarEventosComoVisualizado(IdEventos);
+            return Ok();
         }
 
         [HttpDelete("{id}")]

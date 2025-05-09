@@ -36,9 +36,11 @@ namespace Motos.Infraestructure.Data.Repositories
             return evento;
         }
 
-        public void VisualizarEvento(IEnumerable<string> ids)
+        public void VisualizarEvento(string id)
         {
-            throw new NotImplementedException();
+            var evento = _context.EventoMoto.Find(id);
+            evento.EventoVisualizado = true;
+            _context.SaveChanges();
         }
 
         public bool ExisteEventoPorIdEvento(string IdEventoMoto)

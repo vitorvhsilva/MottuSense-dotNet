@@ -1,6 +1,7 @@
 ﻿using Motos.Application.Interfaces;
 using Motos.Domain.Entities;
 using Motos.Domain.Interfaces;
+using Motos.Presentation.Dto.EventoMoto;
 
 namespace Motos.Application.Services
 {
@@ -13,9 +14,12 @@ namespace Motos.Application.Services
             _repository = repository;
         }
 
-        public void MarcarEventosComoVisualizado(IEnumerable<string> ids)
+        public void MarcarEventosComoVisualizado(VisualizarEventosDTO dto)
         {
-            throw new NotImplementedException();
+            foreach (var IdEvento in dto.IdEventos)
+            {
+                _repository.VisualizarEvento(IdEvento);
+            }
         }
 
         public EventoMoto PegarEventoPorIdEvento(string IdEventoMoto)
