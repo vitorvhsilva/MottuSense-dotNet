@@ -30,16 +30,15 @@ namespace Motos.Presentation.Controllers
             return Ok(_mapper.Map<EventoMoto, CadastrarEventoMotoOutputDTO>(eventoPublicado));
         }
 
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult PegarEventoPorIdEventoMoto(string id)
         {
-            return "value";
+            var evento = _service.PegarEventoPorIdEventoMoto(id);
+            if (evento is null)
+                return BadRequest("Evento não encontrado pelo id");
+
+            var eventoOutput = _mapper.Map<EventoMoto, ObterEventoMotoDTO>(evento);
+            return Ok(eventoOutput);
         }
 
 
@@ -49,11 +48,6 @@ namespace Motos.Presentation.Controllers
         {
             _service.MarcarEventosComoVisualizado(IdEventos);
             return Ok();
-        }
-
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

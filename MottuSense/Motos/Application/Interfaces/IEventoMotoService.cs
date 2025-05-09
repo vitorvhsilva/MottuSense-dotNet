@@ -7,7 +7,7 @@ namespace Motos.Application.Interfaces
     {
         EventoMoto PublicarEvento(EventoMoto evento);
         void MarcarEventosComoVisualizado(VisualizarEventosDTO dto);
-        EventoMoto PegarEventoPorIdEvento(string IdEventoMoto);
+        EventoMoto PegarEventoPorIdEventoMoto(string IdEventoMoto);
         IEnumerable<EventoMoto> PegarEventosPorIdMoto(string IdMoto);
         IEnumerable<EventoMoto> PegarEventosPorIdPatio(string IdPatio);
     }

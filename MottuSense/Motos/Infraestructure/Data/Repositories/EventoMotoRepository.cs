@@ -13,9 +13,9 @@ namespace Motos.Infraestructure.Data.Repositories
             _context = context;
         }
 
-        public EventoMoto PegarEventoPorIdEvento(string IdEvento)
+        public EventoMoto PegarEventoPorIdEventoMoto(string IdEventoMoto)
         {
-            throw new NotImplementedException();
+            return _context.EventoMoto.FirstOrDefault(e => e.IdEventoMoto == IdEventoMoto);
         }
 
         public IEnumerable<EventoMoto> PegarEventosPorIdMoto(string IdMoto)

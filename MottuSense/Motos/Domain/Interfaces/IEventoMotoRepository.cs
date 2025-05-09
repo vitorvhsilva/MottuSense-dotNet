@@ -6,7 +6,7 @@ namespace Motos.Domain.Interfaces
     {
         EventoMoto PublicarEvento(EventoMoto evento);
         void VisualizarEvento(string id);
-        EventoMoto PegarEventoPorIdEvento(string IdEventoMoto);
+        EventoMoto PegarEventoPorIdEventoMoto(string IdEventoMoto);
         IEnumerable<EventoMoto> PegarEventosPorIdMoto(string IdMoto);
         IEnumerable<EventoMoto> PegarEventosPorIdPatio(string IdMoto);
         bool ExisteEventoPorIdEvento(string IdEventoMoto);

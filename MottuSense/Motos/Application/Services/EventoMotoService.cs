@@ -22,9 +22,9 @@ namespace Motos.Application.Services
             }
         }
 
-        public EventoMoto PegarEventoPorIdEvento(string IdEventoMoto)
+        public EventoMoto PegarEventoPorIdEventoMoto(string IdEventoMoto)
         {
-            throw new NotImplementedException();
+            return _repository.PegarEventoPorIdEventoMoto(IdEventoMoto);
         }
 
         public IEnumerable<EventoMoto> PegarEventosPorIdMoto(string IdMoto)
