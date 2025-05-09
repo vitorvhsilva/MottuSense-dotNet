@@ -3,6 +3,7 @@
 namespace Motos.Presentation.Dto.Moto
 {
     public record AtualizarMotoInputDTO(
+        string IdMoto,
         string PlacaMoto,
         ModeloMoto ModeloMoto,
         StatusMoto StatusMoto,

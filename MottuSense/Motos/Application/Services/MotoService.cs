@@ -15,7 +15,7 @@ namespace Motos.Application.Services
 
         public Moto AtualizarMoto(Moto moto)
         {
-            throw new NotImplementedException();
+            return _repository.AtualizarMoto(moto);
         }
 
         public Moto CadastrarMoto(Moto moto)

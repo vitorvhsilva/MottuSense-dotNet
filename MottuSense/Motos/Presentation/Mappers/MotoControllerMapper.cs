@@ -11,8 +11,12 @@ namespace Motos.Presentation.Mappers
         {
             CreateMap<CadastrarMotoInputDTO, Moto>();
             CreateMap<Moto, CadastrarMotoOutputDTO>();
+
             CreateMap<Moto, ObterMotoOutputDTO>();
             CreateMap<Moto, ObterMotosOutputDTO>();
+
+            CreateMap<AtualizarMotoInputDTO, Moto>();
+            CreateMap<Moto, AtualizarMotoOutputDTO>();
         }
     }
 }

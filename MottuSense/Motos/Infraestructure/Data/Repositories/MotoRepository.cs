@@ -15,7 +15,12 @@ namespace Motos.Infraestructure.Data.Repositories
 
         public Moto AtualizarMoto(Moto moto)
         {
-            Moto entityMoto = ObterMotoPorId(moto.IdMoto);
+            Moto entityMoto = _context.Moto.FirstOrDefault(m => m.IdMoto == moto.IdMoto);
+
+            if (entityMoto == null)
+            {
+                throw new KeyNotFoundException("Moto não encontrada pelo Id");
+            }
 
             entityMoto.PlacaMoto = moto.PlacaMoto;
             entityMoto.IotMoto = moto.IotMoto;  

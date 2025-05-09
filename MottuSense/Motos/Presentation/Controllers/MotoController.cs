@@ -78,10 +78,14 @@ namespace Motos.Presentation.Controllers
         }
 
         //AtualizarMotoOutputDTO 
-        [HttpPut("{id}")]
+        [HttpPut()]
         public IActionResult AtualizarMoto([FromBody] AtualizarMotoInputDTO dto)
         {
-            return Ok();
+            var moto = _mapper.Map<AtualizarMotoInputDTO, Moto>(dto);
+            var motoAtualizada = _motoService.AtualizarMoto(moto);
+
+
+            return Ok(_mapper.Map<Moto, AtualizarMotoOutputDTO>(motoAtualizada));
         }
 
         [HttpDelete("{id}")]
