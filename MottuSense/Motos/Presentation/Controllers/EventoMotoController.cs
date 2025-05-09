@@ -57,6 +57,18 @@ namespace Motos.Presentation.Controllers
             return Ok(eventoOutput);
         }
 
+        //IEnumerable<ObterEventoMotoDTO>
+        [HttpGet("patios/{IdPatio}")]
+        public IActionResult PegarEventosPorIdPatio(string IdPatio)
+        {
+            var eventos = _service.PegarEventosPorIdPatio(IdPatio);
+            if (eventos.Count().Equals(0))
+                return BadRequest("Nenhum evento encontrado pelo id do patio");
+
+            var eventoOutput = _mapper.Map<IEnumerable<EventoMoto>, IEnumerable<ObterEventoMotoDTO>>(eventos);
+            return Ok(eventoOutput);
+        }
+
         //void
         [HttpPatch("visualizar")]
         public IActionResult VisualizarEventos([FromBody] VisualizarEventosDTO IdEventos)

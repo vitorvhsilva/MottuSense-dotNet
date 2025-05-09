@@ -34,7 +34,7 @@ namespace Motos.Application.Services
 
         public IEnumerable<EventoMoto> PegarEventosPorIdPatio(string IdPatio)
         {
-            throw new NotImplementedException();
+            return _repository.PegarEventosPorIdPatio(IdPatio);
         }
 
         public EventoMoto PublicarEvento(EventoMoto evento)
