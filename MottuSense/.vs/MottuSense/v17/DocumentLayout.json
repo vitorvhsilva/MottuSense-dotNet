@@ -3,6 +3,13 @@
   "WorkspaceRootPath": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Migrations\\20250509233435_initialMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Motos\\Migrations\\20250509233435_initialMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vitor\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.10\\docs\\PACKAGE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|d:\\fiap\\2 ano\\mottusense\\repositorio\\mottusense\\mottusense-dotnet\\mottusense\\motos\\presentation\\controllers\\eventomotocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|solutionrelative:motos\\presentation\\controllers\\eventomotocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -131,19 +138,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20250509233435_initialMigration.cs",
+              "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Migrations\\20250509233435_initialMigration.cs",
+              "RelativeDocumentMoniker": "Motos\\Migrations\\20250509233435_initialMigration.cs",
+              "ToolTip": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Migrations\\20250509233435_initialMigration.cs",
+              "RelativeToolTip": "Motos\\Migrations\\20250509233435_initialMigration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T23:34:35.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PACKAGE.md",
+              "DocumentMoniker": "C:\\Users\\vitor\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.10\\docs\\PACKAGE.md",
+              "ToolTip": "C:\\Users\\vitor\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.10\\docs\\PACKAGE.md [Somente Leitura]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-05-09T23:33:55.249Z",
+              "EditorCaption": " [Somente Leitura]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "EventoMotoController.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Controllers\\EventoMotoController.cs",
               "RelativeDocumentMoniker": "Motos\\Presentation\\Controllers\\EventoMotoController.cs",
               "ToolTip": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Controllers\\EventoMotoController.cs",
               "RelativeToolTip": "Motos\\Presentation\\Controllers\\EventoMotoController.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAwwGgAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAwwGUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T02:04:40.139Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "ControllerMapper.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Mappers\\ControllerMapper.cs",
               "RelativeDocumentMoniker": "Motos\\Presentation\\Mappers\\ControllerMapper.cs",
@@ -156,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MotoController.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Controllers\\MotoController.cs",
               "RelativeDocumentMoniker": "Motos\\Presentation\\Controllers\\MotoController.cs",
@@ -169,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "ILocalizacaoService.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Application\\Interfaces\\ILocalizacaoService.cs",
               "RelativeDocumentMoniker": "Motos\\Application\\Interfaces\\ILocalizacaoService.cs",
@@ -182,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "IEventoMotoService.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Application\\Interfaces\\IEventoMotoService.cs",
               "RelativeDocumentMoniker": "Motos\\Application\\Interfaces\\IEventoMotoService.cs",
@@ -195,7 +226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "EventoMotoService.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Application\\Services\\EventoMotoService.cs",
               "RelativeDocumentMoniker": "Motos\\Application\\Services\\EventoMotoService.cs",
@@ -208,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "MotoRepository.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Infraestructure\\Data\\Repositories\\MotoRepository.cs",
               "RelativeDocumentMoniker": "Motos\\Infraestructure\\Data\\Repositories\\MotoRepository.cs",
@@ -221,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "EventoMotoRepository.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Infraestructure\\Data\\Repositories\\EventoMotoRepository.cs",
               "RelativeDocumentMoniker": "Motos\\Infraestructure\\Data\\Repositories\\EventoMotoRepository.cs",
@@ -234,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "VisualizarEventosDTO.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Dto\\EventoMoto\\VisualizarEventosDTO.cs",
               "RelativeDocumentMoniker": "Motos\\Presentation\\Dto\\EventoMoto\\VisualizarEventosDTO.cs",
@@ -247,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "IMotoService.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Application\\Interfaces\\IMotoService.cs",
               "RelativeDocumentMoniker": "Motos\\Application\\Interfaces\\IMotoService.cs",
@@ -260,7 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "IEventoMotoRepository.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Domain\\Interfaces\\IEventoMotoRepository.cs",
               "RelativeDocumentMoniker": "Motos\\Domain\\Interfaces\\IEventoMotoRepository.cs",
@@ -273,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "CadastrarEventoMotoOutputDTO.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Dto\\EventoMoto\\CadastrarEventoMotoOutputDTO.cs",
               "RelativeDocumentMoniker": "Motos\\Presentation\\Dto\\EventoMoto\\CadastrarEventoMotoOutputDTO.cs",
@@ -286,7 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "ObterEventoMotoDTO.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Dto\\EventoMoto\\ObterEventoMotoDTO.cs",
               "RelativeDocumentMoniker": "Motos\\Presentation\\Dto\\EventoMoto\\ObterEventoMotoDTO.cs",
@@ -299,7 +330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "CadastrarEventoMotoInputDTO.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Dto\\EventoMoto\\CadastrarEventoMotoInputDTO.cs",
               "RelativeDocumentMoniker": "Motos\\Presentation\\Dto\\EventoMoto\\CadastrarEventoMotoInputDTO.cs",
@@ -311,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Program.cs",
               "RelativeDocumentMoniker": "Motos\\Program.cs",
@@ -323,7 +354,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "MotoService.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Application\\Services\\MotoService.cs",
               "RelativeDocumentMoniker": "Motos\\Application\\Services\\MotoService.cs",
@@ -335,7 +366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "ApplicationContext.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Infraestructure\\Data\\AppData\\ApplicationContext.cs",
               "RelativeDocumentMoniker": "Motos\\Infraestructure\\Data\\AppData\\ApplicationContext.cs",
@@ -347,7 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "LocalizacaoRepository.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Infraestructure\\Data\\Repositories\\LocalizacaoRepository.cs",
               "RelativeDocumentMoniker": "Motos\\Infraestructure\\Data\\Repositories\\LocalizacaoRepository.cs",
@@ -359,7 +390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "EventoMoto.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Domain\\Entities\\EventoMoto.cs",
               "RelativeDocumentMoniker": "Motos\\Domain\\Entities\\EventoMoto.cs",
@@ -371,7 +402,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "ILocalizacaoRepository.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Domain\\Interfaces\\ILocalizacaoRepository.cs",
               "RelativeDocumentMoniker": "Motos\\Domain\\Interfaces\\ILocalizacaoRepository.cs",
@@ -383,7 +414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "LocalizacaoService.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Application\\Services\\LocalizacaoService.cs",
               "RelativeDocumentMoniker": "Motos\\Application\\Services\\LocalizacaoService.cs",
@@ -395,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "LocalizacaoMoto.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Domain\\Entities\\LocalizacaoMoto.cs",
               "RelativeDocumentMoniker": "Motos\\Domain\\Entities\\LocalizacaoMoto.cs",
@@ -407,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "IMotoRepository.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Domain\\Interfaces\\IMotoRepository.cs",
               "RelativeDocumentMoniker": "Motos\\Domain\\Interfaces\\IMotoRepository.cs",
@@ -419,7 +450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "EstruturaPatio.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Domain\\Entities\\EstruturaPatio.cs",
               "RelativeDocumentMoniker": "Motos\\Domain\\Entities\\EstruturaPatio.cs",
@@ -431,7 +462,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "Patio.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Domain\\Entities\\Patio.cs",
               "RelativeDocumentMoniker": "Motos\\Domain\\Entities\\Patio.cs",
@@ -443,7 +474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "Moto.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Domain\\Entities\\Moto.cs",
               "RelativeDocumentMoniker": "Motos\\Domain\\Entities\\Moto.cs",
@@ -455,7 +486,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "Evento.cs",
               "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Domain\\Entities\\Evento.cs",
               "RelativeDocumentMoniker": "Motos\\Domain\\Entities\\Evento.cs",

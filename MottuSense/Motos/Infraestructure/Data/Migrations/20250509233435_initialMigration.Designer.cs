@@ -12,7 +12,7 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace Motos.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20250509010630_initialMigration")]
+    [Migration("20250509233435_initialMigration")]
     partial class initialMigration
     {
         /// <inheritdoc />
@@ -25,34 +25,7 @@ namespace Motos.Migrations
 
             OracleModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Motos.Domain.Entities.EventoMoto", b =>
-                {
-                    b.Property<string>("IdEventoMoto")
-                        .HasColumnType("VARCHAR2(255)");
-
-                    b.Property<DateTime>("DataHoraEvento")
-                        .HasColumnType("TIMESTAMP");
-
-                    b.Property<bool>("EventoVisualizado")
-                        .HasColumnType("NUMBER(1)");
-
-                    b.Property<decimal>("IdEvento")
-                        .HasColumnType("NUMBER");
-
-                    b.Property<string>("IdMoto")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR2(255)");
-
-                    b.HasKey("IdEventoMoto");
-
-                    b.HasIndex("IdEvento");
-
-                    b.HasIndex("IdMoto");
-
-                    b.ToTable("TB_EVENTO_MOTO");
-                });
-
-            modelBuilder.Entity("Motos.Domain.Entitites.EstruturaPatio", b =>
+            modelBuilder.Entity("Motos.Domain.Entities.EstruturaPatio", b =>
                 {
                     b.Property<string>("IdPatio")
                         .HasColumnType("VARCHAR2(255)");
@@ -74,7 +47,7 @@ namespace Motos.Migrations
                     b.ToTable("TB_ESTRUTURA_PATIO");
                 });
 
-            modelBuilder.Entity("Motos.Domain.Entitites.Evento", b =>
+            modelBuilder.Entity("Motos.Domain.Entities.Evento", b =>
                 {
                     b.Property<decimal>("IdEvento")
                         .ValueGeneratedOnAdd()
@@ -133,7 +106,34 @@ namespace Motos.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Motos.Domain.Entitites.LocalizacaoMoto", b =>
+            modelBuilder.Entity("Motos.Domain.Entities.EventoMoto", b =>
+                {
+                    b.Property<string>("IdEventoMoto")
+                        .HasColumnType("VARCHAR2(255)");
+
+                    b.Property<DateTime>("DataHoraEvento")
+                        .HasColumnType("TIMESTAMP");
+
+                    b.Property<bool>("EventoVisualizado")
+                        .HasColumnType("NUMBER(1)");
+
+                    b.Property<decimal>("IdEvento")
+                        .HasColumnType("NUMBER");
+
+                    b.Property<string>("IdMoto")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR2(255)");
+
+                    b.HasKey("IdEventoMoto");
+
+                    b.HasIndex("IdEvento");
+
+                    b.HasIndex("IdMoto");
+
+                    b.ToTable("TB_EVENTO_MOTO");
+                });
+
+            modelBuilder.Entity("Motos.Domain.Entities.LocalizacaoMoto", b =>
                 {
                     b.Property<string>("IdMoto")
                         .HasColumnType("VARCHAR2(255)");
@@ -149,7 +149,7 @@ namespace Motos.Migrations
                     b.ToTable("TB_LOCALIZACAO_MOTO");
                 });
 
-            modelBuilder.Entity("Motos.Domain.Entitites.Moto", b =>
+            modelBuilder.Entity("Motos.Domain.Entities.Moto", b =>
                 {
                     b.Property<string>("IdMoto")
                         .HasColumnType("VARCHAR2(255)");
@@ -188,7 +188,7 @@ namespace Motos.Migrations
                     b.ToTable("TB_MOTO");
                 });
 
-            modelBuilder.Entity("Motos.Domain.Entitites.Patio", b =>
+            modelBuilder.Entity("Motos.Domain.Entities.Patio", b =>
                 {
                     b.Property<string>("IdPatio")
                         .HasColumnType("VARCHAR2(255)");
@@ -220,15 +220,26 @@ namespace Motos.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Motos.Domain.Entities.EstruturaPatio", b =>
+                {
+                    b.HasOne("Motos.Domain.Entities.Patio", "Patio")
+                        .WithMany()
+                        .HasForeignKey("IdPatio")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Patio");
+                });
+
             modelBuilder.Entity("Motos.Domain.Entities.EventoMoto", b =>
                 {
-                    b.HasOne("Motos.Domain.Entitites.Evento", "Evento")
+                    b.HasOne("Motos.Domain.Entities.Evento", "Evento")
                         .WithMany("EventosMoto")
                         .HasForeignKey("IdEvento")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Motos.Domain.Entitites.Moto", "Moto")
+                    b.HasOne("Motos.Domain.Entities.Moto", "Moto")
                         .WithMany("EventosMoto")
                         .HasForeignKey("IdMoto")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -239,31 +250,20 @@ namespace Motos.Migrations
                     b.Navigation("Moto");
                 });
 
-            modelBuilder.Entity("Motos.Domain.Entitites.EstruturaPatio", b =>
+            modelBuilder.Entity("Motos.Domain.Entities.LocalizacaoMoto", b =>
                 {
-                    b.HasOne("Motos.Domain.Entitites.Patio", "Patio")
-                        .WithMany()
-                        .HasForeignKey("IdPatio")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Patio");
-                });
-
-            modelBuilder.Entity("Motos.Domain.Entitites.LocalizacaoMoto", b =>
-                {
-                    b.HasOne("Motos.Domain.Entitites.Moto", "Moto")
+                    b.HasOne("Motos.Domain.Entities.Moto", "Moto")
                         .WithOne("LocalizacaoMoto")
-                        .HasForeignKey("Motos.Domain.Entitites.LocalizacaoMoto", "IdMoto")
+                        .HasForeignKey("Motos.Domain.Entities.LocalizacaoMoto", "IdMoto")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Moto");
                 });
 
-            modelBuilder.Entity("Motos.Domain.Entitites.Moto", b =>
+            modelBuilder.Entity("Motos.Domain.Entities.Moto", b =>
                 {
-                    b.HasOne("Motos.Domain.Entitites.Patio", "Patio")
+                    b.HasOne("Motos.Domain.Entities.Patio", "Patio")
                         .WithMany("Motos")
                         .HasForeignKey("IdPatio")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -272,19 +272,19 @@ namespace Motos.Migrations
                     b.Navigation("Patio");
                 });
 
-            modelBuilder.Entity("Motos.Domain.Entitites.Evento", b =>
+            modelBuilder.Entity("Motos.Domain.Entities.Evento", b =>
                 {
                     b.Navigation("EventosMoto");
                 });
 
-            modelBuilder.Entity("Motos.Domain.Entitites.Moto", b =>
+            modelBuilder.Entity("Motos.Domain.Entities.Moto", b =>
                 {
                     b.Navigation("EventosMoto");
 
                     b.Navigation("LocalizacaoMoto");
                 });
 
-            modelBuilder.Entity("Motos.Domain.Entitites.Patio", b =>
+            modelBuilder.Entity("Motos.Domain.Entities.Patio", b =>
                 {
                     b.Navigation("Motos");
                 });
