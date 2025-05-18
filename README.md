@@ -36,8 +36,39 @@ Esta API fornece endpoints para gerenciamento de motos, seus eventos e localiza�
 | `GET`  | `/patios/{IdPatio}`    | Lista eventos ocorridos em um pátio       | `IdPatio`: ID do pátio (Path)       | 200 OK, 404 Not Found               |
 | `PATCH`| `/visualizar`          | Marca múltiplos eventos como visualizados | IDs dos eventos (Body)              | 200 OK, 400 Bad Request             |
 
-## Dependências
+## Instalação
 
+1. Clonar repositório:
+```bash
+git clone https://github.com/vitorvhsilva/MottuSense-dotNet
+cd MottuSense-dotNet
+```
+
+2. Configurar conexão (appsettings.json):
+```bash
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "Oracle": "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=)(PORT=))) (CONNECT_DATA=(SERVER=DEDICATED)(SID=ORCL)));User Id=;Password=;"
+  }
+}
+```
+3. Instalar dependências:
+```bash
+dotnet restore
+dotnet ef database update
+```
+4. Executar:
+```bash
+dotnet run
+```
+
+## Dependências
 - Entity Framework
 - Oracle
 - Swagger
