@@ -143,10 +143,8 @@
               "RelativeDocumentMoniker": "Motos\\Migrations\\20250509233435_initialMigration.cs",
               "ToolTip": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Migrations\\20250509233435_initialMigration.cs",
               "RelativeToolTip": "Motos\\Migrations\\20250509233435_initialMigration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:34:35.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:34:35.261Z"
             },
             {
               "$type": "Document",
@@ -169,8 +167,7 @@
               "RelativeToolTip": "Motos\\Presentation\\Controllers\\EventoMotoController.cs",
               "ViewState": "AgIAAFAAAAAAAAAAAAAwwGUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T02:04:40.139Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T02:04:40.139Z"
             },
             {
               "$type": "Document",
@@ -182,8 +179,7 @@
               "RelativeToolTip": "Motos\\Presentation\\Mappers\\ControllerMapper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T02:34:15.069Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T02:34:15.069Z"
             },
             {
               "$type": "Document",
@@ -195,8 +191,7 @@
               "RelativeToolTip": "Motos\\Presentation\\Controllers\\MotoController.cs",
               "ViewState": "AgIAAFwAAAAAAAAAAAAowHkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T02:16:36.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T02:16:36.056Z"
             },
             {
               "$type": "Document",
@@ -208,8 +203,7 @@
               "RelativeToolTip": "Motos\\Application\\Interfaces\\ILocalizacaoService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T02:18:05.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T02:18:05.904Z"
             },
             {
               "$type": "Document",
@@ -221,8 +215,7 @@
               "RelativeToolTip": "Motos\\Application\\Interfaces\\IEventoMotoService.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAIwAsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T01:50:30.775Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T01:50:30.775Z"
             },
             {
               "$type": "Document",
@@ -234,8 +227,7 @@
               "RelativeToolTip": "Motos\\Application\\Services\\EventoMotoService.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAowCQAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T02:01:28.997Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T02:01:28.997Z"
             },
             {
               "$type": "Document",
@@ -247,8 +239,7 @@
               "RelativeToolTip": "Motos\\Infraestructure\\Data\\Repositories\\MotoRepository.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAwwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T02:17:03.094Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T02:17:03.094Z"
             },
             {
               "$type": "Document",
@@ -260,8 +251,7 @@
               "RelativeToolTip": "Motos\\Infraestructure\\Data\\Repositories\\EventoMotoRepository.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T02:03:37.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T02:03:37.342Z"
             },
             {
               "$type": "Document",
@@ -273,8 +263,7 @@
               "RelativeToolTip": "Motos\\Presentation\\Dto\\EventoMoto\\VisualizarEventosDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T22:41:25.971Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T22:41:25.971Z"
             },
             {
               "$type": "Document",
@@ -286,8 +275,7 @@
               "RelativeToolTip": "Motos\\Application\\Interfaces\\IMotoService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T02:02:31.38Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T02:02:31.38Z"
             },
             {
               "$type": "Document",
@@ -299,8 +287,7 @@
               "RelativeToolTip": "Motos\\Domain\\Interfaces\\IEventoMotoRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T02:02:25.657Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T02:02:25.657Z"
             },
             {
               "$type": "Document",
@@ -312,8 +299,7 @@
               "RelativeToolTip": "Motos\\Presentation\\Dto\\EventoMoto\\CadastrarEventoMotoOutputDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T02:06:48.667Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T02:06:48.667Z"
             },
             {
               "$type": "Document",
@@ -325,8 +311,7 @@
               "RelativeToolTip": "Motos\\Presentation\\Dto\\EventoMoto\\ObterEventoMotoDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T22:46:28.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T22:46:28.619Z"
             },
             {
               "$type": "Document",
