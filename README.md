@@ -2,7 +2,7 @@
 
 ## Arquitetura do Projeto
 <img src="https://github.com/vitorvhsilva/MottuSense-dotNet/blob/main/assets/arquitetura_mottusense.png">
-Essa é a solução completa vamos entregar pra Mottu.
+Essa é a solução completa que vamos entregar pra Mottu.
 
 - Nosso Front End se comunica com as nossas API`s de Java e .NET
 - A API de Java é focada em guardar informações do usuário e autenticar ele.
