@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|d:\\fiap\\2 ano\\mottusense\\repositorio\\mottusense\\mottusense-dotnet\\mottusense\\motos\\presentation\\doc\\sample\\criarmotosample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|solutionrelative:motos\\presentation\\doc\\sample\\criarmotosample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|d:\\fiap\\2 ano\\mottusense\\repositorio\\mottusense\\mottusense-dotnet\\mottusense\\motos\\presentation\\doc\\sample\\motosoutputsample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|solutionrelative:motos\\presentation\\doc\\sample\\motosoutputsample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|d:\\fiap\\2 ano\\mottusense\\repositorio\\mottusense\\mottusense-dotnet\\mottusense\\motos\\presentation\\doc\\sample\\atualizarmotosample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|solutionrelative:motos\\presentation\\doc\\sample\\atualizarmotosample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|d:\\fiap\\2 ano\\mottusense\\repositorio\\mottusense\\mottusense-dotnet\\mottusense\\motos\\presentation\\mappers\\controllermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|solutionrelative:motos\\presentation\\mappers\\controllermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|d:\\fiap\\2 ano\\mottusense\\repositorio\\mottusense\\mottusense-dotnet\\mottusense\\motos\\presentation\\dto\\moto\\atualizarmotoinputdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|solutionrelative:motos\\presentation\\dto\\moto\\atualizarmotoinputdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|d:\\fiap\\2 ano\\mottusense\\repositorio\\mottusense\\mottusense-dotnet\\mottusense\\motos\\presentation\\controllers\\motocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|solutionrelative:motos\\presentation\\controllers\\motocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|d:\\fiap\\2 ano\\mottusense\\repositorio\\mottusense\\mottusense-dotnet\\mottusense\\motos\\presentation\\dto\\moto\\cadastrarmotoinputdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|solutionrelative:motos\\presentation\\dto\\moto\\cadastrarmotoinputdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|d:\\fiap\\2 ano\\mottusense\\repositorio\\mottusense\\mottusense-dotnet\\mottusense\\motos\\presentation\\controllers\\eventomotocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD5CFCB5-C342-4E4E-8D1E-8E29B77B9D33}|Motos\\Motos.csproj|solutionrelative:motos\\presentation\\controllers\\eventomotocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,21 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CriarMotoSample.cs",
-              "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Doc\\Sample\\CriarMotoSample.cs",
-              "RelativeDocumentMoniker": "Motos\\Presentation\\Doc\\Sample\\CriarMotoSample.cs",
-              "ToolTip": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Doc\\Sample\\CriarMotoSample.cs",
-              "RelativeToolTip": "Motos\\Presentation\\Doc\\Sample\\CriarMotoSample.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T21:14:48.217Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -51,41 +38,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AtualizarMotoSample.cs",
-              "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Doc\\Sample\\AtualizarMotoSample.cs",
-              "RelativeDocumentMoniker": "Motos\\Presentation\\Doc\\Sample\\AtualizarMotoSample.cs",
-              "ToolTip": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Doc\\Sample\\AtualizarMotoSample.cs",
-              "RelativeToolTip": "Motos\\Presentation\\Doc\\Sample\\AtualizarMotoSample.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "MotosOutputSample.cs",
+              "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Doc\\Sample\\MotosOutputSample.cs",
+              "RelativeDocumentMoniker": "Motos\\Presentation\\Doc\\Sample\\MotosOutputSample.cs",
+              "ToolTip": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Doc\\Sample\\MotosOutputSample.cs",
+              "RelativeToolTip": "Motos\\Presentation\\Doc\\Sample\\MotosOutputSample.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwCsAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T21:14:27.207Z",
+              "WhenOpened": "2025-09-07T21:32:23.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ControllerMapper.cs",
+              "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Mappers\\ControllerMapper.cs",
+              "RelativeDocumentMoniker": "Motos\\Presentation\\Mappers\\ControllerMapper.cs",
+              "ToolTip": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Mappers\\ControllerMapper.cs",
+              "RelativeToolTip": "Motos\\Presentation\\Mappers\\ControllerMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T21:32:17.707Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AtualizarMotoInputDTO.cs",
-              "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Dto\\Moto\\AtualizarMotoInputDTO.cs",
-              "RelativeDocumentMoniker": "Motos\\Presentation\\Dto\\Moto\\AtualizarMotoInputDTO.cs",
-              "ToolTip": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Dto\\Moto\\AtualizarMotoInputDTO.cs",
-              "RelativeToolTip": "Motos\\Presentation\\Dto\\Moto\\AtualizarMotoInputDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Title": "MotoController.cs",
+              "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Controllers\\MotoController.cs",
+              "RelativeDocumentMoniker": "Motos\\Presentation\\Controllers\\MotoController.cs",
+              "ToolTip": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Controllers\\MotoController.cs",
+              "RelativeToolTip": "Motos\\Presentation\\Controllers\\MotoController.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAwwCgAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T21:13:43.391Z",
+              "WhenOpened": "2025-09-07T21:20:56.792Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CadastrarMotoInputDTO.cs",
-              "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Dto\\Moto\\CadastrarMotoInputDTO.cs",
-              "RelativeDocumentMoniker": "Motos\\Presentation\\Dto\\Moto\\CadastrarMotoInputDTO.cs",
-              "ToolTip": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Dto\\Moto\\CadastrarMotoInputDTO.cs",
-              "RelativeToolTip": "Motos\\Presentation\\Dto\\Moto\\CadastrarMotoInputDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Title": "EventoMotoController.cs",
+              "DocumentMoniker": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Controllers\\EventoMotoController.cs",
+              "RelativeDocumentMoniker": "Motos\\Presentation\\Controllers\\EventoMotoController.cs",
+              "ToolTip": "D:\\FIAP\\2 ANO\\MottuSense\\Repositorio\\MottuSense\\MottuSense-dotNet\\MottuSense\\Motos\\Presentation\\Controllers\\EventoMotoController.cs",
+              "RelativeToolTip": "Motos\\Presentation\\Controllers\\EventoMotoController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAHAAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T21:13:41.257Z",
+              "WhenOpened": "2025-09-07T21:20:14.824Z",
               "EditorCaption": ""
             }
           ]

@@ -41,7 +41,7 @@ namespace Motos.Presentation.Doc.Sample
                         IdMoto = "MOTO124",
                         PlacaMoto = "DEF-5678",
                         ModeloMoto = ModeloMoto.MOTTU_E,
-                        StatusMoto = StatusMoto.DISPONIVEL,
+                        StatusMoto = StatusMoto.PRONTA_PARA_ALUGUEL,
                         ChassiMoto = "9BWZZZ377VT004252",
                         IotMoto = "IOT002",
                         IdPatio = "PATIO45",

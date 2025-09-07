@@ -11,7 +11,6 @@ namespace Motos.Presentation.Mappers
         public ControllerMapper()
         {
             CreateMap<CadastrarEventoMotoInputDTO, EventoMoto>();
-            CreateMap<EventoMoto, CadastrarEventoMotoOutputDTO>();
             CreateMap<EventoMoto, ObterEventoMotoDTO>();
 
             CreateMap<CadastrarMotoInputDTO, Moto>();
