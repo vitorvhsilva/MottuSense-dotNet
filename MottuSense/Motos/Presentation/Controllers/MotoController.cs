@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Motos.Application.Interfaces;
@@ -7,6 +8,7 @@ using Motos.Presentation.Dto.Localizacao;
 using Motos.Presentation.Dto.Moto;
 using Motos.Presentation.Dto.Output;
 using Swashbuckle.AspNetCore.Annotations;
+using System;
 using System.Net;
 
 namespace Motos.Presentation.Controllers
@@ -36,11 +38,25 @@ namespace Motos.Presentation.Controllers
         [EnableRateLimiting("rateLimit")]
         //IEnumerable<ObterMotosOutputDTO>
         [HttpGet("patios/{id}")]
-        public IActionResult ObterTodasAsMotosDoPatio(string id)
+        public IActionResult ObterTodasAsMotosDoPatio(string id, int pagina = 1, int tamanho = 5)
         {
             var motos = _motoService.ObterTodasAsMotosDoPatio(id);
 
-            var output = _mapper.Map<IEnumerable<Moto>, IEnumerable<ObterMotosOutputDTO>>(motos);
+            var totalItens = motos.Count();
+            var totalPaginas = (int)Math.Ceiling(totalItens / (double)tamanho);
+
+            var paginaMotos = motos
+                .Skip((pagina - 1) * tamanho)
+                .Take(tamanho);
+
+            var output = new
+            {
+                data = _mapper.Map<IEnumerable<Moto>, IEnumerable<ObterMotosOutputDTO>>(motos),
+                paginaAtual = pagina,
+                tamanhoPagina = tamanho,
+                totalItens,
+                totalPaginas
+            };
 
             return Ok(output);
         }
@@ -76,7 +92,7 @@ namespace Motos.Presentation.Controllers
                 localizacaoDTO
             );
 
-            return Ok(obterMoto);
+            return Ok(MontarHateoas(obterMoto, obterMoto.IdMoto));
         }
 
         [SwaggerOperation(
@@ -96,7 +112,7 @@ namespace Motos.Presentation.Controllers
 
             var output = _mapper.Map<Moto, CadastrarMotoOutputDTO>(moto);
 
-            return CreatedAtAction(nameof(ObterMotoPorId), new { id = output.IdMoto }, output);
+            return CreatedAtAction(nameof(ObterMotoPorId), new { id = output.IdMoto }, MontarHateoas(output, output.IdMoto));
         }
 
         [SwaggerOperation(
@@ -116,7 +132,9 @@ namespace Motos.Presentation.Controllers
             if (motoAtualizada is null)
                 return BadRequest("Moto não encontrada!");
 
-            return Ok(_mapper.Map<Moto, AtualizarMotoOutputDTO>(motoAtualizada));
+            var output = _mapper.Map<Moto, AtualizarMotoOutputDTO>(motoAtualizada);
+
+            return Ok(MontarHateoas(output, output.IdMoto));
         }
 
 
@@ -135,6 +153,20 @@ namespace Motos.Presentation.Controllers
                 return BadRequest("Moto não encontrada!");
 
             return NoContent();
+        }
+
+        private object MontarHateoas<T>(T dto, string id)
+        {
+            return new
+            {
+                data = dto,
+                links = new
+                {
+                    self = Url.Action(nameof(ObterMotoPorId), "Moto", new { id }, Request.Scheme),
+                    put = Url.Action(nameof(AtualizarMoto), "Moto", null, Request.Scheme),
+                    delete = Url.Action(nameof(DeletarMotoPorId), "Moto", new { id }, Request.Scheme)
+                }
+            };
         }
     }
 }

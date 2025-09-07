@@ -28,7 +28,7 @@ namespace Motos.Presentation.Controllers
             Summary = "Cadastra um evento",
             Description = "Cadastra um evento na aplicação"
         )]
-        [SwaggerResponse(201, "Evento criado com sucesso", typeof(CadastrarEventoMotoOutputDTO))]
+        [SwaggerResponse(201, "Evento criado com sucesso", typeof(ObterEventoMotoDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro ao processar a requisição")]
         [EnableRateLimiting("rateLimit")]
 
@@ -38,10 +38,10 @@ namespace Motos.Presentation.Controllers
         {
             var evento = _mapper.Map<CadastrarEventoMotoInputDTO, EventoMoto>(dto);
             var eventoPublicado = _service.PublicarEvento(evento);
-            var eventoOutput = _mapper.Map<EventoMoto, CadastrarEventoMotoOutputDTO>(eventoPublicado);
+            var eventoOutput = _mapper.Map<EventoMoto, ObterEventoMotoDTO>(eventoPublicado);
 
             return CreatedAtAction(nameof(PegarEventoPorIdEventoMoto), 
-                new { IdEventoMoto = eventoOutput.IdEventoMoto }, eventoOutput);
+                new { IdEventoMoto = eventoOutput.IdEventoMoto }, MontarHateoas(eventoOutput, eventoOutput.IdEventoMoto));
         }
 
         [SwaggerOperation(
@@ -60,7 +60,7 @@ namespace Motos.Presentation.Controllers
                 return BadRequest("Evento não encontrado pelo id");
 
             var eventoOutput = _mapper.Map<EventoMoto, ObterEventoMotoDTO>(evento);
-            return Ok(eventoOutput);
+            return Ok(MontarHateoas(eventoOutput, eventoOutput.IdEventoMoto));
         }
 
         [SwaggerOperation(
@@ -72,14 +72,13 @@ namespace Motos.Presentation.Controllers
         [EnableRateLimiting("rateLimit")]
         //IEnumerable<ObterEventoMotoDTO>
         [HttpGet("motos/{IdMoto}")]
-        public IActionResult PegarEventosPorIdMoto(string IdMoto)
+        public IActionResult PegarEventosPorIdMoto(string IdMoto, int pagina = 1, int tamanho = 5)
         {
             var eventos = _service.PegarEventosPorIdMoto(IdMoto);
             if (eventos.Count().Equals(0))
                 return BadRequest("Nenhum evento encontrado pelo id da moto");
 
-            var eventoOutput = _mapper.Map<IEnumerable<EventoMoto>, IEnumerable<ObterEventoMotoDTO>>(eventos);
-            return Ok(eventoOutput);
+            return Ok(PaginarEventos(eventos, pagina, tamanho));
         }
 
         [SwaggerOperation(
@@ -91,14 +90,13 @@ namespace Motos.Presentation.Controllers
         [EnableRateLimiting("rateLimit")]
         //IEnumerable<ObterEventoMotoDTO>
         [HttpGet("patios/{IdPatio}")]
-        public IActionResult PegarEventosPorIdPatio(string IdPatio)
+        public IActionResult PegarEventosPorIdPatio(string IdPatio, int pagina = 1, int tamanho = 5)
         {
             var eventos = _service.PegarEventosPorIdPatio(IdPatio);
             if (eventos.Count().Equals(0))
                 return BadRequest("Nenhum evento encontrado pelo id do patio");
 
-            var eventoOutput = _mapper.Map<IEnumerable<EventoMoto>, IEnumerable<ObterEventoMotoDTO>>(eventos);
-            return Ok(eventoOutput);
+            return Ok(PaginarEventos(eventos, pagina, tamanho));
         }
 
         [SwaggerOperation(
@@ -112,6 +110,44 @@ namespace Motos.Presentation.Controllers
         {
             _service.MarcarEventosComoVisualizado(IdEventos);
             return Ok();
+        }
+
+        private object PaginarEventos(IEnumerable<EventoMoto> eventos, int pagina, int tamanho)
+        {
+            var totalItens = eventos.Count();
+            var totalPaginas = (int)Math.Ceiling(totalItens / (double)tamanho);
+
+            var paginaEventos = eventos
+                .Skip((pagina - 1) * tamanho)
+                .Take(tamanho);
+
+            var eventosComLinks = _mapper
+                .Map<IEnumerable<EventoMoto>, IEnumerable<ObterEventoMotoDTO>>(paginaEventos)
+                .Select(e => MontarHateoas(e, e.IdEventoMoto));
+
+            return new
+            {
+                data = eventosComLinks,
+                paginaAtual = pagina,
+                tamanhoPagina = tamanho,
+                totalItens,
+                totalPaginas
+            };
+        }
+
+        private object MontarHateoas<T>(T dto, string id)
+        {
+            return new
+            {
+                data = dto,
+                links = new
+                {
+                    self = Url.Action(nameof(PegarEventoPorIdEventoMoto), "EventoMoto", new { IdEventoMoto = id }, Request.Scheme),
+                    getByMoto = Url.Action(nameof(PegarEventosPorIdMoto), "EventoMoto", new { IdMoto = "" }, Request.Scheme),
+                    getByPatio = Url.Action(nameof(PegarEventosPorIdPatio), "EventoMoto", new { IdPatio = "" }, Request.Scheme),
+                    visualizar = Url.Action(nameof(VisualizarEventos), "EventoMoto", null, Request.Scheme)
+                }
+            };
         }
     }
 }
