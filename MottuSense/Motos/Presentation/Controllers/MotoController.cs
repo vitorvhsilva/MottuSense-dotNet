@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Motos.Application.Interfaces;
 using Motos.Domain.Entities;
 using Motos.Presentation.Dto.Localizacao;
@@ -32,7 +33,7 @@ namespace Motos.Presentation.Controllers
         )]
         [SwaggerResponse(200, "Lista de motos retornada com sucesso", typeof(IEnumerable<ObterMotosOutputDTO>))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro ao processar a requisição")]
-
+        [EnableRateLimiting("rateLimit")]
         //IEnumerable<ObterMotosOutputDTO>
         [HttpGet("patios/{id}")]
         public IActionResult ObterTodasAsMotosDoPatio(string id)
@@ -50,7 +51,7 @@ namespace Motos.Presentation.Controllers
         )]
         [SwaggerResponse(200, "Motos retornada com sucesso", typeof(ObterMotoOutputDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Não foi possível encontrar uma moto ou a localização com esse id")]
-
+        [EnableRateLimiting("rateLimit")]
         //ObterMotoOutputDTO 
         [HttpGet("{id}")]
         public IActionResult ObterMotoPorId(string id)
@@ -84,7 +85,7 @@ namespace Motos.Presentation.Controllers
         )]
         [SwaggerResponse(201, "Moto cadastrada com sucesso", typeof(CadastrarMotoOutputDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro ao processar a requisição")]
-
+        [EnableRateLimiting("rateLimit")]
         //CadastrarMotoOutputDTO 
         [HttpPost()]
         public IActionResult CadastrarMoto([FromBody] CadastrarMotoInputDTO dto)
@@ -104,7 +105,7 @@ namespace Motos.Presentation.Controllers
         )]
         [SwaggerResponse(200, "Moto atualizada com sucesso", typeof(AtualizarMotoOutputDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Moto não encontrada pelo id")]
-
+        [EnableRateLimiting("rateLimit")]
         //AtualizarMotoOutputDTO 
         [HttpPut()]
         public IActionResult AtualizarMoto([FromBody] AtualizarMotoInputDTO dto)
@@ -125,7 +126,7 @@ namespace Motos.Presentation.Controllers
         )]
         [SwaggerResponse(204, "Moto apagada com sucesso")]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Moto não encontrada pelo id")]
-
+        [EnableRateLimiting("rateLimit")]
         [HttpDelete("{id}")]
         public IActionResult DeletarMotoPorId(string id)
         {

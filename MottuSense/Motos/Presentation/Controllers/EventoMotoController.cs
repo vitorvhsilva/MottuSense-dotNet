@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Motos.Application.Interfaces;
 using Motos.Domain.Entities;
 using Motos.Presentation.Dto.EventoMoto;
@@ -29,6 +30,7 @@ namespace Motos.Presentation.Controllers
         )]
         [SwaggerResponse(201, "Evento criado com sucesso", typeof(CadastrarEventoMotoOutputDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro ao processar a requisição")]
+        [EnableRateLimiting("rateLimit")]
 
         //CadastrarEventoMotoOutputDTO
         [HttpPost]
@@ -48,6 +50,7 @@ namespace Motos.Presentation.Controllers
          )]
         [SwaggerResponse(200, "Evento retornado com sucesso", typeof(ObterEventoMotoDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Evento não encontrado pelo id")]
+        [EnableRateLimiting("rateLimit")]
         //ObterEventoMotoDTO
         [HttpGet("{IdEventoMoto}")]
         public IActionResult PegarEventoPorIdEventoMoto(string IdEventoMoto)
@@ -66,7 +69,7 @@ namespace Motos.Presentation.Controllers
          )]
         [SwaggerResponse(200, "Evento retornado com sucesso", typeof(ObterEventoMotoDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Evento não encontrado pelo id da moto")]
-
+        [EnableRateLimiting("rateLimit")]
         //IEnumerable<ObterEventoMotoDTO>
         [HttpGet("motos/{IdMoto}")]
         public IActionResult PegarEventosPorIdMoto(string IdMoto)
@@ -85,7 +88,7 @@ namespace Motos.Presentation.Controllers
          )]
         [SwaggerResponse(200, "Evento retornado com sucesso", typeof(ObterEventoMotoDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Evento não encontrado pelo id do pátio")]
-
+        [EnableRateLimiting("rateLimit")]
         //IEnumerable<ObterEventoMotoDTO>
         [HttpGet("patios/{IdPatio}")]
         public IActionResult PegarEventosPorIdPatio(string IdPatio)
@@ -103,8 +106,7 @@ namespace Motos.Presentation.Controllers
              Description = "Visualiza uma lista de Eventos pelo id"
          )]
         [SwaggerResponse(200, "Eventos visualizados com sucesso")]
-
-        //void
+        [EnableRateLimiting("rateLimit")]
         [HttpPatch("visualizar")]
         public IActionResult VisualizarEventos([FromBody] VisualizarEventosDTO IdEventos)
         {

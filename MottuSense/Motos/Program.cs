@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Motos.Application.Interfaces;
@@ -7,6 +9,7 @@ using Motos.Infraestructure.Data.AppData;
 using Motos.Infraestructure.Data.Repositories;
 using Motos.Presentation.Mappers;
 using System.Text.Json.Serialization;
+using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +29,27 @@ builder.Services.AddTransient<ILocalizacaoService, LocalizacaoService>();
 builder.Services.AddTransient<IEventoMotoRepository, EventoMotoRepository>();
 builder.Services.AddTransient<IEventoMotoService, EventoMotoService>();
 
+builder.Services.AddRateLimiter(options => {
+    options.AddFixedWindowLimiter(policyName: "rateLimit", opt => {
+        opt.PermitLimit = 20;
+        opt.Window = TimeSpan.FromSeconds(60);
+        opt.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+        opt.QueueLimit = 2;
+    });
+
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+});
+
+
+builder.Services.AddResponseCompression(options => {
+    options.EnableForHttps = true;
+    options.Providers.Add<GzipCompressionProvider>();
+});
+
+builder.Services.Configure<GzipCompressionProviderOptions>(options =>
+{
+    options.Level = System.IO.Compression.CompressionLevel.Fastest;
+});
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
