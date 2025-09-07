@@ -4,10 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Motos.Application.Interfaces;
 using Motos.Domain.Entities;
+using Motos.Presentation.Doc.Sample;
+using Motos.Presentation.Dto.EventoMoto;
 using Motos.Presentation.Dto.Localizacao;
 using Motos.Presentation.Dto.Moto;
 using Motos.Presentation.Dto.Output;
 using Swashbuckle.AspNetCore.Annotations;
+using Swashbuckle.AspNetCore.Filters;
 using System;
 using System.Net;
 
@@ -35,6 +38,7 @@ namespace Motos.Presentation.Controllers
         )]
         [SwaggerResponse(200, "Lista de motos retornada com sucesso", typeof(IEnumerable<ObterMotosOutputDTO>))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro ao processar a requisição")]
+        [SwaggerResponseExample(200, typeof(MotosOutputSample))]
         [EnableRateLimiting("rateLimit")]
         //IEnumerable<ObterMotosOutputDTO>
         [HttpGet("patios/{id}")]
@@ -68,6 +72,7 @@ namespace Motos.Presentation.Controllers
         [SwaggerResponse(200, "Motos retornada com sucesso", typeof(ObterMotoOutputDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Não foi possível encontrar uma moto ou a localização com esse id")]
         [EnableRateLimiting("rateLimit")]
+        [SwaggerResponseExample(200, typeof(MotoOutputSample))]
         //ObterMotoOutputDTO 
         [HttpGet("{id}")]
         public IActionResult ObterMotoPorId(string id)
@@ -101,6 +106,8 @@ namespace Motos.Presentation.Controllers
         )]
         [SwaggerResponse(201, "Moto cadastrada com sucesso", typeof(CadastrarMotoOutputDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro ao processar a requisição")]
+        [SwaggerRequestExample(typeof(CadastrarMotoInputDTO), typeof(CriarMotoSample))]
+        [SwaggerResponseExample(201, typeof(MotoOutputSample))]
         [EnableRateLimiting("rateLimit")]
         //CadastrarMotoOutputDTO 
         [HttpPost()]
@@ -121,6 +128,7 @@ namespace Motos.Presentation.Controllers
         )]
         [SwaggerResponse(200, "Moto atualizada com sucesso", typeof(AtualizarMotoOutputDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Moto não encontrada pelo id")]
+        [SwaggerResponseExample(200, typeof(MotoOutputSample))]
         [EnableRateLimiting("rateLimit")]
         //AtualizarMotoOutputDTO 
         [HttpPut()]

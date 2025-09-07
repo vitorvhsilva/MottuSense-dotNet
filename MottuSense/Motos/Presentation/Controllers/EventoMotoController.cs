@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Motos.Application.Interfaces;
 using Motos.Domain.Entities;
+using Motos.Presentation.Doc.Sample;
 using Motos.Presentation.Dto.EventoMoto;
 using Motos.Presentation.Dto.Output;
 using Swashbuckle.AspNetCore.Annotations;
+using Swashbuckle.AspNetCore.Filters;
 using System.Net;
 
 
@@ -30,6 +32,8 @@ namespace Motos.Presentation.Controllers
         )]
         [SwaggerResponse(201, "Evento criado com sucesso", typeof(ObterEventoMotoDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro ao processar a requisição")]
+        [SwaggerRequestExample(typeof(CadastrarEventoMotoInputDTO), typeof(CriarEventoMotoSample))]
+        [SwaggerResponseExample(201, typeof(EventoMotoOutputSample))]
         [EnableRateLimiting("rateLimit")]
 
         //CadastrarEventoMotoOutputDTO
@@ -50,6 +54,7 @@ namespace Motos.Presentation.Controllers
          )]
         [SwaggerResponse(200, "Evento retornado com sucesso", typeof(ObterEventoMotoDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Evento não encontrado pelo id")]
+        [SwaggerResponseExample(200, typeof(EventoMotoOutputSample))]
         [EnableRateLimiting("rateLimit")]
         //ObterEventoMotoDTO
         [HttpGet("{IdEventoMoto}")]
@@ -69,6 +74,7 @@ namespace Motos.Presentation.Controllers
          )]
         [SwaggerResponse(200, "Evento retornado com sucesso", typeof(ObterEventoMotoDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Evento não encontrado pelo id da moto")]
+        [SwaggerResponseExample(200, typeof(EventoMotosOutputSample))]
         [EnableRateLimiting("rateLimit")]
         //IEnumerable<ObterEventoMotoDTO>
         [HttpGet("motos/{IdMoto}")]
@@ -87,6 +93,7 @@ namespace Motos.Presentation.Controllers
          )]
         [SwaggerResponse(200, "Evento retornado com sucesso", typeof(ObterEventoMotoDTO))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Evento não encontrado pelo id do pátio")]
+        [SwaggerResponseExample(200, typeof(EventoMotosOutputSample))]
         [EnableRateLimiting("rateLimit")]
         //IEnumerable<ObterEventoMotoDTO>
         [HttpGet("patios/{IdPatio}")]

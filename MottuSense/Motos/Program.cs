@@ -8,6 +8,7 @@ using Motos.Domain.Interfaces;
 using Motos.Infraestructure.Data.AppData;
 using Motos.Infraestructure.Data.Repositories;
 using Motos.Presentation.Mappers;
+using Swashbuckle.AspNetCore.Filters;
 using System.Text.Json.Serialization;
 using System.Threading.RateLimiting;
 
@@ -60,10 +61,11 @@ builder.Services.AddControllers()
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(conf => {
-    conf.EnableAnnotations();
+builder.Services.AddSwaggerExamplesFromAssemblyOf<Program>();
+builder.Services.AddSwaggerGen(c => {
+    c.EnableAnnotations();
+    c.ExampleFilters();
 });
-
 
 var app = builder.Build();
 
@@ -75,9 +77,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
+app.UseRateLimiter();
+app.UseResponseCompression();
 app.MapControllers();
 
 app.Run();
