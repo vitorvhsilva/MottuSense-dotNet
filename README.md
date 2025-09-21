@@ -20,7 +20,7 @@ Esta API fornece endpoints para gerenciamento de motos, seus eventos e localiza�
 
 | Método | Endpoint               | Descrição                                  | Parâmetros                           | Status Codes                        |
 |--------|------------------------|-------------------------------------------|--------------------------------------|-------------------------------------|
-| `GET`  | `/patios/{id}`         | Lista todas motos de um pátio específico  | `id`: ID do pátio (Path), Query: pagina (número da página), tamanho (quantidade por página)            | 200 OK, 400 Bad Request             |
+| `GET`  | `/patios/{id}`         | Lista todas motos de um pátio específico  | `id`: ID do pátio (Path), `Query`: pagina (número da página), tamanho (quantidade por página)            | 200 OK, 400 Bad Request             |
 | `GET`  | `/{id}`                | Obtém detalhes completos de uma moto      | `id`: ID da moto (Path)             | 200 OK, 404 Not Found               |
 | `POST` | `/`                    | Cadastra uma nova moto no sistema         | JSON da moto (Body)                 | 201 Created, 400 Bad Request        |
 | `PUT`  | `/`                    | Atualiza informações de uma moto existente| JSON atualizado (Body)              | 200 OK, 404 Not Found               |
