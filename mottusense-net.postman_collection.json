@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "e0228533-dc74-4d77-86db-4ca371b55bd3",
+		"name": "mottusense-net",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34543089"
+	},
+	"item": [
+		{
+			"name": "motos",
+			"item": [
+				{
+					"name": "cadastro moto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"PlacaMoto\": \"7843-YYD\",\r\n    \"ModeloMoto\": \"MOTTU_POP\",\r\n    \"StatusMoto\": \"PRONTA_PARA_ALUGUEL\",\r\n    \"ChassiMoto\": \"1111111\",\r\n    \"IotMoto\": \"1111111\",\r\n    \"IdPatio\": \"idTeste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/motos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"motos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cadastro moto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idMoto\": \"1fe80cb9-72de-4a9c-941e-da2b28cd8737\",\r\n    \"placaMoto\": \"7842-YYY\",\r\n    \"modeloMoto\": \"MOTTU_POP\",\r\n    \"statusMoto\": \"PRONTA_PARA_ALUGUEL\",\r\n    \"chassiMoto\": \"1111111\",\r\n    \"iotMoto\": \"1111111\",\r\n    \"idPatio\": \"idTeste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/motos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"motos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pegar moto id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/motos/1fe80cb9-72de-4a9c-941e-da2b28cd8737",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"motos",
+								"1fe80cb9-72de-4a9c-941e-da2b28cd8737"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pegar moto id patio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/motos/patios/idTeste?pagina=1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"motos",
+								"patios",
+								"idTeste"
+							],
+							"query": [
+								{
+									"key": "pagina",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar moto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/motos/5d773c24-3bc4-445e-a9eb-9cd974bcdc52",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"motos",
+								"5d773c24-3bc4-445e-a9eb-9cd974bcdc52"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "eventos",
+			"item": [
+				{
+					"name": "cadastro eventos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdMoto\": \"1fe80cb9-72de-4a9c-941e-da2b28cd8737\",\r\n    \"IdEvento\": 1,\r\n    \"DataHoraEvento\": \"2025-05-08T14:30:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/eventos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"eventos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pegar evento id eventomoto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/eventos/cd492585-1da1-4467-9dee-6bf273fee368",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"eventos",
+								"cd492585-1da1-4467-9dee-6bf273fee368"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pegar eventos id moto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/eventos/motos/1fe80cb9-72de-4a9c-941e-da2b28cd8737",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"eventos",
+								"motos",
+								"1fe80cb9-72de-4a9c-941e-da2b28cd8737"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pegar eventos id patio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/eventos/patios/idTeste",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"eventos",
+								"patios",
+								"idTeste"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "visualizar eventos",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdEventos\": [\"cd492585-1da1-4467-9dee-6bf273fee368\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/eventos/visualizar",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"eventos",
+								"visualizar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
