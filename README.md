@@ -77,7 +77,8 @@ Guarda a localização geográfica da moto.
 
 - **Propriedades:** latitude, longitude.  
 - **Navegação:** referência à moto.  
-- **Motivo:** Suporte a funcionalidades de rastreamento e monitoramento.  
+- **Motivo:** Suporte a funcionalidades de rastreamento e monitoramento.
+
 
 ## Instalação
 
@@ -110,6 +111,11 @@ dotnet ef database update
 ```bash
 dotnet run
 ```
+
+## Testes
+Os testes da aplicação podem ser feitos utilizando a Collection do Postman presente no repositório:
+
+https://github.com/vitorvhsilva/MottuSense-dotNet/blob/main/mottusense-net.postman_collection.json
 
 ## Dependências
 - Entity Framework
