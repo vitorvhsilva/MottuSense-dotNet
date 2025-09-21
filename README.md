@@ -1,5 +1,11 @@
 # MottuSense (Moto Service)
 
+## Integrantes 
+
+Brendon de Paula- RM559196
+João Gananca - RM556405
+Vitor Hugo - RM558961
+
 ## Arquitetura do Projeto
 <img src="https://github.com/vitorvhsilva/MottuSense-dotNet/blob/main/assets/arquitetura_mottusense.png">
 Essa é a solução completa que vamos entregar pra Mottu.
