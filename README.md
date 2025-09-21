@@ -36,6 +36,49 @@ Esta API fornece endpoints para gerenciamento de motos, seus eventos e localiza�
 | `GET`  | `/patios/{IdPatio}`    | Lista eventos ocorridos em um pátio       | `IdPatio`: ID do pátio (Path)       | 200 OK, 404 Not Found               |
 | `PATCH`| `/visualizar`          | Marca múltiplos eventos como visualizados | IDs dos eventos (Body)              | 200 OK, 400 Bad Request             |
 
+## Domínios da Aplicação
+
+### 1. Moto
+Representa uma motocicleta cadastrada no sistema.  
+
+- **Propriedades:** placa, chassi, status, modelo, IoT, localização, pátio.  
+- **Navegação:** associações com eventos (**EventosMoto**), localização (**LocalizacaoMoto**) e pátio (**Patio**).  
+- **Motivo:** Central para o negócio, pois todas as operações giram em torno das motos.  
+
+### 2. EventoMoto
+Registra eventos específicos relacionados a uma moto (ex: entrada, saída, manutenção).  
+
+- **Propriedades:** id do evento, id da moto, visualização, data/hora.  
+- **Navegação:** referência à moto e ao tipo de evento.  
+- **Motivo:** Permite rastrear o histórico e status das motos, essencial para controle e auditoria.  
+
+### 3. Evento
+Define os tipos de eventos possíveis (ex: entrada, saída, manutenção).  
+
+- **Propriedades:** descrição, cor, id.  
+- **Navegação:** lista de eventos de moto associados.  
+- **Motivo:** Abstrai o conceito de evento, facilitando a reutilização e categorização.  
+
+### 4. Patio
+Representa o local físico onde as motos ficam armazenadas.  
+
+- **Propriedades:** id, filial, estrutura criada.  
+- **Navegação:** lista de motos associadas.  
+- **Motivo:** Essencial para organizar e localizar motos fisicamente.  
+
+### 5. EstruturaPatio
+Modela detalhes estruturais do pátio (coordenadas, tamanho, rotação).  
+
+- **Navegação:** referência ao pátio.  
+- **Motivo:** Permite detalhar a disposição física dos pátios, útil para visualização e gestão espacial.  
+
+### 6. LocalizacaoMoto
+Guarda a localização geográfica da moto.  
+
+- **Propriedades:** latitude, longitude.  
+- **Navegação:** referência à moto.  
+- **Motivo:** Suporte a funcionalidades de rastreamento e monitoramento.  
+
 ## Instalação
 
 1. Clonar repositório:
