@@ -30,6 +30,16 @@ builder.Services.AddTransient<ILocalizacaoService, LocalizacaoService>();
 builder.Services.AddTransient<IEventoMotoRepository, EventoMotoRepository>();
 builder.Services.AddTransient<IEventoMotoService, EventoMotoService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowDevelopment", policy =>
+    {
+        policy.WithOrigins("http://localhost:8081")
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 builder.Services.AddRateLimiter(options => {
     options.AddFixedWindowLimiter(policyName: "rateLimit", opt => {
         opt.PermitLimit = 20;
@@ -76,6 +86,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowDevelopment");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.UseRateLimiter();
