@@ -8,8 +8,8 @@ namespace Motos.Presentation.Doc.Sample
         {
             return new
             {
-                IdMoto = "MOTO45",
-                IdEvento = 101,
+                IdMoto = "idMoto",
+                IdEvento = 1,
                 DataHoraEvento = DateTime.UtcNow
             };
         }

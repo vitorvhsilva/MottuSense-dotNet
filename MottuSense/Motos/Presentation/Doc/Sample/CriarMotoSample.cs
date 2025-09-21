@@ -15,7 +15,7 @@ namespace Motos.Presentation.Doc.Sample
                 StatusMoto = StatusMoto.AGENDADA_PARA_MANUTENCAO,
                 ChassiMoto = "9BWZZZ377VT004252",
                 IotMoto = "IOT002",
-                IdPatio = "PATIO45"
+                IdPatio = "idTeste"
             };
         }
     }
