@@ -1,5 +1,11 @@
 # MottuSense (Moto Service)
 
+## Integrantes 
+
+### Brendon de Paula- RM559196
+### João Gananca - RM556405
+### Vitor Hugo - RM558961
+
 ## Arquitetura do Projeto
 <img src="https://github.com/vitorvhsilva/MottuSense-dotNet/blob/main/assets/arquitetura_mottusense.png">
 Essa é a solução completa que vamos entregar pra Mottu.
@@ -20,7 +26,7 @@ Esta API fornece endpoints para gerenciamento de motos, seus eventos e localiza�
 
 | Método | Endpoint               | Descrição                                  | Parâmetros                           | Status Codes                        |
 |--------|------------------------|-------------------------------------------|--------------------------------------|-------------------------------------|
-| `GET`  | `/patios/{id}`         | Lista todas motos de um pátio específico  | `id`: ID do pátio (Path)            | 200 OK, 400 Bad Request             |
+| `GET`  | `/patios/{id}`         | Lista todas motos de um pátio específico  | `id`: ID do pátio (Path), `Query`: pagina (número da página), tamanho (quantidade por página)            | 200 OK, 400 Bad Request             |
 | `GET`  | `/{id}`                | Obtém detalhes completos de uma moto      | `id`: ID da moto (Path)             | 200 OK, 404 Not Found               |
 | `POST` | `/`                    | Cadastra uma nova moto no sistema         | JSON da moto (Body)                 | 201 Created, 400 Bad Request        |
 | `PUT`  | `/`                    | Atualiza informações de uma moto existente| JSON atualizado (Body)              | 200 OK, 404 Not Found               |
@@ -35,6 +41,50 @@ Esta API fornece endpoints para gerenciamento de motos, seus eventos e localiza�
 | `GET`  | `/motos/{IdMoto}`      | Lista todos eventos associados a uma moto | `IdMoto`: ID da moto (Path)         | 200 OK, 404 Not Found               |
 | `GET`  | `/patios/{IdPatio}`    | Lista eventos ocorridos em um pátio       | `IdPatio`: ID do pátio (Path)       | 200 OK, 404 Not Found               |
 | `PATCH`| `/visualizar`          | Marca múltiplos eventos como visualizados | IDs dos eventos (Body)              | 200 OK, 400 Bad Request             |
+
+## Domínios da Aplicação
+
+### 1. Moto
+Representa uma motocicleta cadastrada no sistema.  
+
+- **Propriedades:** placa, chassi, status, modelo, IoT, localização, pátio.  
+- **Navegação:** associações com eventos (**EventosMoto**), localização (**LocalizacaoMoto**) e pátio (**Patio**).  
+- **Motivo:** Central para o negócio, pois todas as operações giram em torno das motos.  
+
+### 2. EventoMoto
+Registra eventos específicos relacionados a uma moto (ex: entrada, saída, manutenção).  
+
+- **Propriedades:** id do evento, id da moto, visualização, data/hora.  
+- **Navegação:** referência à moto e ao tipo de evento.  
+- **Motivo:** Permite rastrear o histórico e status das motos, essencial para controle e auditoria.  
+
+### 3. Evento
+Define os tipos de eventos possíveis (ex: entrada, saída, manutenção).  
+
+- **Propriedades:** descrição, cor, id.  
+- **Navegação:** lista de eventos de moto associados.  
+- **Motivo:** Abstrai o conceito de evento, facilitando a reutilização e categorização.  
+
+### 4. Patio
+Representa o local físico onde as motos ficam armazenadas.  
+
+- **Propriedades:** id, filial, estrutura criada.  
+- **Navegação:** lista de motos associadas.  
+- **Motivo:** Essencial para organizar e localizar motos fisicamente.  
+
+### 5. EstruturaPatio
+Modela detalhes estruturais do pátio (coordenadas, tamanho, rotação).  
+
+- **Navegação:** referência ao pátio.  
+- **Motivo:** Permite detalhar a disposição física dos pátios, útil para visualização e gestão espacial.  
+
+### 6. LocalizacaoMoto
+Guarda a localização geográfica da moto.  
+
+- **Propriedades:** latitude, longitude.  
+- **Navegação:** referência à moto.  
+- **Motivo:** Suporte a funcionalidades de rastreamento e monitoramento.
+
 
 ## Instalação
 
@@ -67,6 +117,11 @@ dotnet ef database update
 ```bash
 dotnet run
 ```
+
+## Testes
+Os testes da aplicação podem ser feitos utilizando a Collection do Postman presente no repositório:
+
+https://github.com/vitorvhsilva/MottuSense-dotNet/blob/main/mottusense-net.postman_collection.json
 
 ## Dependências
 - Entity Framework
