@@ -32,9 +32,9 @@ builder.Services.AddTransient<IEventoMotoService, EventoMotoService>();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowDevelopment", policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins("http://localhost:8081")
+        policy.AllowAnyOrigin()
               .AllowAnyMethod()
               .AllowAnyHeader();
     });

@@ -15,7 +15,8 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 
 ENV ASPNETCORE_URLS=http://+:7050 \
-    DOTNET_RUNNING_IN_CONTAINER=true
+    DOTNET_RUNNING_IN_CONTAINER=true \
+    ASPNETCORE_ENVIRONMENT=Development
 
 COPY --from=build /app/publish .
 
