@@ -9,7 +9,6 @@ namespace Motos.Presentation.Doc.Sample
         {
             return new
             {
-                IdMoto = "MOTO123",
                 PlacaMoto = "XYZ-9876",
                 ModeloMoto = ModeloMoto.MOTTU_E,
                 StatusMoto = StatusMoto.AGENDADA_PARA_MANUTENCAO,
