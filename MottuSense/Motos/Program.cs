@@ -77,6 +77,8 @@ builder.Services.AddSwaggerGen(c => {
     c.ExampleFilters();
 });
 
+builder.Services.AddHealthChecks();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -93,5 +95,6 @@ app.UseAuthorization();
 app.UseRateLimiter();
 app.UseResponseCompression();
 app.MapControllers();
+app.MapHealthChecks("/health");
 
 app.Run();
