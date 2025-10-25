@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 using Motos.Application.Interfaces;
 using Motos.Application.Services;
 using Motos.Domain.Interfaces;
 using Motos.Infraestructure.Data.AppData;
 using Motos.Infraestructure.Data.Repositories;
 using Motos.Presentation.Mappers;
+using Motos.Presentation.Security;
 using Swashbuckle.AspNetCore.Filters;
 using System.Text.Json.Serialization;
 using System.Threading.RateLimiting;
@@ -88,6 +88,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowAll");
 app.UseHttpsRedirection();
+app.UseMiddleware<ApiKeyMiddleware>();
 app.UseAuthorization();
 app.UseRateLimiter();
 app.UseResponseCompression();
