@@ -1,11 +1,11 @@
-﻿using AutoMapper;
+﻿using Asp.Versioning;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Motos.Application.Interfaces;
 using Motos.Domain.Entities;
 using Motos.Presentation.Doc.Sample;
 using Motos.Presentation.Dto.EventoMoto;
-using Motos.Presentation.Dto.Output;
 using Swashbuckle.AspNetCore.Annotations;
 using Swashbuckle.AspNetCore.Filters;
 using System.Net;
@@ -13,7 +13,8 @@ using System.Net;
 
 namespace Motos.Presentation.Controllers
 {
-    [Route("api/v1/eventos")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/eventos")]
     [ApiController]
     public class EventoMotoController : ControllerBase
     {

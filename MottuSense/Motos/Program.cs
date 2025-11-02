@@ -1,6 +1,9 @@
+using Asp.Versioning;
+using Asp.Versioning.ApiExplorer;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using Motos.Application.Interfaces;
 using Motos.Application.Services;
 using Motos.Domain.Interfaces;
@@ -14,8 +17,8 @@ using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddDbContext<ApplicationContext>(x => {
+builder.Services.AddDbContext<ApplicationContext>(x =>
+{
     x.UseOracle(builder.Configuration.GetConnectionString("Oracle"));
 });
 
@@ -40,8 +43,10 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddRateLimiter(options => {
-    options.AddFixedWindowLimiter(policyName: "rateLimit", opt => {
+builder.Services.AddRateLimiter(options =>
+{
+    options.AddFixedWindowLimiter(policyName: "rateLimit", opt =>
+    {
         opt.PermitLimit = 20;
         opt.Window = TimeSpan.FromSeconds(60);
         opt.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
@@ -51,8 +56,8 @@ builder.Services.AddRateLimiter(options => {
     options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
 });
 
-
-builder.Services.AddResponseCompression(options => {
+builder.Services.AddResponseCompression(options =>
+{
     options.EnableForHttps = true;
     options.Providers.Add<GzipCompressionProvider>();
 });
@@ -64,28 +69,59 @@ builder.Services.Configure<GzipCompressionProviderOptions>(options =>
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
-        {
-            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-        }); 
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 
+builder.Services.AddApiVersioning(options =>
+{
+    options.DefaultApiVersion = new ApiVersion(1, 0); 
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.ReportApiVersions = true; 
+    options.ApiVersionReader = ApiVersionReader.Combine(
+        new UrlSegmentApiVersionReader(),
+        new HeaderApiVersionReader("x-api-version"),
+        new QueryStringApiVersionReader("api-version")
+    );
+})
+.AddApiExplorer(options =>
+{
+    options.GroupNameFormat = "'v'VVV"; 
+    options.SubstituteApiVersionInUrl = true;
+});
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<Program>();
-builder.Services.AddSwaggerGen(c => {
-    c.EnableAnnotations();
-    c.ExampleFilters();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.EnableAnnotations();
+    options.ExampleFilters();
+
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Motos API",
+        Version = "v1",
+        Description = "API de Gestão de Motos e Eventos da MottuSense"
+    });
 });
 
 builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        foreach (var desc in provider.ApiVersionDescriptions)
+        {
+            options.SwaggerEndpoint($"/swagger/{desc.GroupName}/swagger.json",
+                $"Motos API {desc.GroupName.ToUpperInvariant()}");
+        }
+    });
 }
 
 app.UseCors("AllowAll");
@@ -98,3 +134,5 @@ app.MapControllers();
 app.MapHealthChecks("/health");
 
 app.Run();
+
+public partial class Program { }
