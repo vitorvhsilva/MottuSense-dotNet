@@ -33,6 +33,8 @@ builder.Services.AddTransient<ILocalizacaoService, LocalizacaoService>();
 builder.Services.AddTransient<IEventoMotoRepository, EventoMotoRepository>();
 builder.Services.AddTransient<IEventoMotoService, EventoMotoService>();
 
+builder.Services.AddTransient<IMLService, MLService>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
