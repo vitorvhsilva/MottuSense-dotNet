@@ -5,7 +5,7 @@ using Motos.Domain.Interfaces;
 using Motos.Presentation.Dto.EventoMoto;
 using Motos.Tests.Mocks;
 
-namespace Motos.Tests.Application
+namespace Motos.Tests.UnitTest.Application
 {
     public class EventoMotoServiceTests
     {
@@ -21,16 +21,13 @@ namespace Motos.Tests.Application
         [Fact(DisplayName = "Deve publicar evento gerando novo Id único")]
         public void PublicarEvento_DeveGerarIdUnico()
         {
-            // Arrange
             var evento = EventoMotoMock.CriarEventoMotoSemId();
             _repositoryMock.Setup(r => r.ExisteEventoPorIdEvento(It.IsAny<string>())).Returns(false);
             _repositoryMock.Setup(r => r.PublicarEvento(It.IsAny<EventoMoto>()))
                            .Returns<EventoMoto>(e => e);
 
-            // Act
             var result = _service.PublicarEvento(evento);
 
-            // Assert
             Assert.NotNull(result.IdEventoMoto);
             Assert.False(result.EventoVisualizado);
             _repositoryMock.Verify(r => r.PublicarEvento(It.IsAny<EventoMoto>()), Times.Once);
@@ -39,13 +36,10 @@ namespace Motos.Tests.Application
         [Fact(DisplayName = "Deve marcar eventos como visualizado")]
         public void MarcarEventosComoVisualizado_DeveChamarRepositorio()
         {
-            // Arrange
             var dto = new VisualizarEventosDTO(new List<string> { "11", "2", "3" });
-
             // Act
             _service.MarcarEventosComoVisualizado(dto);
 
-            // Assert
             foreach (var id in dto.IdEventos)
             {
                 _repositoryMock.Verify(r => r.VisualizarEvento(id), Times.Once);
@@ -55,15 +49,12 @@ namespace Motos.Tests.Application
         [Fact(DisplayName = "Deve obter evento por IdEventoMoto")]
         public void PegarEventoPorIdEventoMoto_DeveRetornarEvento()
         {
-            // Arrange
             var evento = EventoMotoMock.CriarEventoMotoPadrao();
             _repositoryMock.Setup(r => r.PegarEventoPorIdEventoMoto(evento.IdEventoMoto))
                            .Returns(evento);
 
-            // Act
             var result = _service.PegarEventoPorIdEventoMoto(evento.IdEventoMoto);
 
-            // Assert
             Assert.Equal(evento, result);
             _repositoryMock.Verify(r => r.PegarEventoPorIdEventoMoto(evento.IdEventoMoto), Times.Once);
         }
@@ -71,15 +62,12 @@ namespace Motos.Tests.Application
         [Fact(DisplayName = "Deve obter eventos por IdMoto")]
         public void PegarEventosPorIdMoto_DeveRetornarLista()
         {
-            // Arrange
             var eventos = EventoMotoMock.CriarListaEventos();
             _repositoryMock.Setup(r => r.PegarEventosPorIdMoto("moto-001"))
                            .Returns(eventos);
 
-            // Act
             var result = _service.PegarEventosPorIdMoto("moto-001");
 
-            // Assert
             Assert.Equal(2, ((List<EventoMoto>)result).Count);
             _repositoryMock.Verify(r => r.PegarEventosPorIdMoto("moto-001"), Times.Once);
         }
@@ -87,15 +75,12 @@ namespace Motos.Tests.Application
         [Fact(DisplayName = "Deve obter eventos por IdPatio")]
         public void PegarEventosPorIdPatio_DeveRetornarLista()
         {
-            // Arrange
             var eventos = EventoMotoMock.CriarListaEventos();
             _repositoryMock.Setup(r => r.PegarEventosPorIdPatio("patio-01"))
                            .Returns(eventos);
 
-            // Act
             var result = _service.PegarEventosPorIdPatio("patio-01");
 
-            // Assert
             Assert.Equal(2, ((List<EventoMoto>)result).Count);
             _repositoryMock.Verify(r => r.PegarEventosPorIdPatio("patio-01"), Times.Once);
         }

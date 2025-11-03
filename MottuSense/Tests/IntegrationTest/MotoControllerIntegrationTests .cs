@@ -55,24 +55,20 @@ namespace Motos.Tests.IntegrationTest
         [Fact]
         public async Task ObterTodasAsMotosDoPatio_RetornaOk()
         {
-            // Arrange
             var patioId = "patio-01";
             var motos = MotoMock.CriarListaMotos();
             _factory.MotoServiceMock.Setup(s => s.ObterTodasAsMotosDoPatio(patioId)).Returns(motos);
 
             var client = CreateClientWithApiKey();
 
-            // Act
             var response = await client.GetAsync($"/api/v1/motos/patios/{patioId}");
 
-            // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
 
         [Fact]
         public async Task ObterMotoPorId_RetornaOk()
         {
-            // Arrange
             var motoDto = MotoControllerMock.ObterMotoOutputPadrao();
             var motoEntity = MotoMock.CriarMotoPadrao();
             motoEntity.IdMoto = motoDto.IdMoto;
@@ -83,17 +79,14 @@ namespace Motos.Tests.IntegrationTest
 
             var client = CreateClientWithApiKey();
 
-            // Act
             var response = await client.GetAsync($"/api/v1/motos/{motoDto.IdMoto}");
 
-            // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
 
         [Fact]
         public async Task CadastrarMoto_RetornaCreated()
         {
-            // Arrange
             var input = MotoControllerMock.CadastrarMotoInputPadrao();
             var output = MotoControllerMock.CadastrarMotoOutputPadrao();
 
@@ -105,17 +98,14 @@ namespace Motos.Tests.IntegrationTest
 
             var client = CreateClientWithApiKey();
 
-            // Act
             var response = await client.PostAsJsonAsync("/api/v1/motos", input);
 
-            // Assert
             Assert.Equal(HttpStatusCode.Created, response.StatusCode);
         }
 
         [Fact]
         public async Task AtualizarMoto_RetornaOk()
         {
-            // Arrange
             var input = MotoControllerMock.AtualizarMotoInputPadrao();
             var motoAtualizada = MotoMock.CriarMotoPadrao();
             motoAtualizada.IdMoto = input.IdMoto;
@@ -124,27 +114,22 @@ namespace Motos.Tests.IntegrationTest
 
             var client = CreateClientWithApiKey();
 
-            // Act
             var response = await client.PutAsJsonAsync("/api/v1/motos", input);
 
-            // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
 
         [Fact]
         public async Task DeletarMotoPorId_RetornaNoContent()
         {
-            // Arrange
             var moto = MotoMock.CriarMotoPadrao();
 
             _factory.MotoServiceMock.Setup(s => s.DeletarMotoPorId(moto.IdMoto)).Returns(moto);
 
             var client = CreateClientWithApiKey();
 
-            // Act
             var response = await client.DeleteAsync($"/api/v1/motos/{moto.IdMoto}");
 
-            // Assert
             Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
         }
     }

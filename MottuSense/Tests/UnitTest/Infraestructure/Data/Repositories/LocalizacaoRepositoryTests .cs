@@ -6,7 +6,7 @@ using Motos.Infraestructure.Data.AppData;
 using Motos.Infraestructure.Data.Repositories;
 using Motos.Tests.Mocks;
 
-namespace Motos.Tests.Infrastructure
+namespace Motos.Tests.UnitTest.Infrastructure.Data.Repositories
 {
     public class LocalizacaoRepositoryTests : IDisposable
     {
