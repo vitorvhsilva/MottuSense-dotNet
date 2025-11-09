@@ -119,9 +119,16 @@ dotnet run
 ```
 
 ## Testes
-Os testes da aplicação podem ser feitos utilizando a Collection do Postman presente no repositório:
+Os testes manuais da aplicação podem ser feitos utilizando a Collection do Postman presente no repositório:
 
 https://github.com/vitorvhsilva/MottuSense-dotNet/blob/main/mottusense-net.postman_collection.json
+
+Os testes unitários da aplicação podem ser executados de duas formas:
+
+Via console: rodando dotnet no console
+Via IDE: clicando com o botão direito no projeto tests e clicando em "Executar Testes"
+<img width="398" height="277" alt="image" src="https://github.com/user-attachments/assets/55610293-57c9-4f3f-8ab5-641d43ac51e4" />
+
 
 ## Dependências
 - Entity Framework
