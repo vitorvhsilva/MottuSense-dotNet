@@ -12,7 +12,7 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace Motos.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20251025201800_initialMigration")]
+    [Migration("20251109162019_initialMigration")]
     partial class initialMigration
     {
         /// <inheritdoc />

@@ -13,10 +13,16 @@
 					"name": "cadastro moto",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "MOTTUSENSEAPIKEY",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"PlacaMoto\": \"7843-YYD\",\r\n    \"ModeloMoto\": \"MOTTU_POP\",\r\n    \"StatusMoto\": \"PRONTA_PARA_ALUGUEL\",\r\n    \"ChassiMoto\": \"1111111\",\r\n    \"IotMoto\": \"1111111\",\r\n    \"IdPatio\": \"idTeste\"\r\n}",
+							"raw": "{\r\n    \"PlacaMoto\": \"7843-YYA\",\r\n    \"ModeloMoto\": \"MOTTU_POP\",\r\n    \"StatusMoto\": \"PRONTA_PARA_ALUGUEL\",\r\n    \"ChassiMoto\": \"1111111\",\r\n    \"IotMoto\": \"1111111\",\r\n    \"IdPatio\": \"idTeste\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -38,7 +44,7 @@
 					"response": []
 				},
 				{
-					"name": "cadastro moto",
+					"name": "atualizar moto",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -89,9 +95,15 @@
 					"name": "pegar moto id patio",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "MOTTUSENSEAPIKEY",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "{{baseURL}}/api/v1/motos/patios/idTeste?pagina=1",
+							"raw": "{{baseURL}}/api/v1/motos/patios/idTeste?pagina=1&tamanho=5",
 							"host": [
 								"{{baseURL}}"
 							],
@@ -106,6 +118,10 @@
 								{
 									"key": "pagina",
 									"value": "1"
+								},
+								{
+									"key": "tamanho",
+									"value": "5"
 								}
 							]
 						}
@@ -127,6 +143,34 @@
 								"v1",
 								"motos",
 								"5d773c24-3bc4-445e-a9eb-9cd974bcdc52"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "health",
+			"item": [
+				{
+					"name": "ver saude",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "MOTTUSENSEAPIKEY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/health",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"health"
 							]
 						}
 					},
@@ -257,6 +301,87 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "prever manutencao",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-key",
+						"value": "MOTTUSENSEAPIKEY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idMoto\": \"moto-001\",\r\n  \"modeloMoto\": \"MOTTU_E\",\r\n  \"statusMoto\": \"PRONTA_PARA_ALUGUEL\",\r\n  \"idPatio\": \"patio-01\",\r\n  \"qtdEventosRecentes\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7050/api/v1/motos/prever-manutencao",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7050",
+					"path": [
+						"api",
+						"v1",
+						"motos",
+						"prever-manutencao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rodar procedure",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-key",
+						"value": "MOTTUSENSEAPIKEY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7050/api/v1/db/listar-motos",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7050",
+					"path": [
+						"api",
+						"v1",
+						"db",
+						"listar-motos"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

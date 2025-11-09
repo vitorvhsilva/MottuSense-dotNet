@@ -105,6 +105,30 @@ builder.Services.AddSwaggerGen(options =>
         Version = "v1",
         Description = "API de Gestão de Motos e Eventos da MottuSense"
     });
+
+    options.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
+    {
+        Description = "Informe a chave de API no campo abaixo",
+        Name = "x-api-key",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "ApiKey"
+    });
+
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "ApiKey"
+                }
+            },
+            new string[] {}
+        }
+    });
 });
 
 builder.Services.AddHealthChecks();
